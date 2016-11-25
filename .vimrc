@@ -161,10 +161,10 @@ set maxmempattern=1000 " enlarge maxmempattern from 1000 to ... (2000000 will gi
 " xterm settings
 "/////////////////////////////////////////////////////////////////////////////
 
-behave xterm  " set mouse behavior as xterm
-if &term =~ 'xterm'
-    set mouse=a
-endif
+" behave xterm  " set mouse behavior as xterm
+" if &term =~ 'xterm'
+"     set mouse=a
+" endif
 
 "/////////////////////////////////////////////////////////////////////////////
 " Variable settings ( set all )
@@ -177,7 +177,7 @@ endif
 set matchtime=0 " 0 second to show the matching paren ( much faster )
 set nu " show line number
 set scrolloff=0 " minimal number of screen lines to keep above and below the cursor
-set nowrap " do not wrap text
+" set nowrap " do not wrap text
 
 " only supoort in 7.3 or higher
 if v:version >= 703
@@ -307,7 +307,7 @@ set nf=
 " Desc: Fold text
 " ------------------------------------------------------------------
 
-set foldmethod=marker foldmarker={,} foldlevel=9999
+set foldmethod=marker foldmarker={,} foldlevel=0
 set diffopt=filler,context:9999
 
 " ------------------------------------------------------------------
