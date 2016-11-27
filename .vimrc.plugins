@@ -444,17 +444,19 @@ let g:ycm_python_binary_path = 'python'
 let g:ycm_global_ycm_extra_conf = '/home/liyunkai/.exvim/vimfiles/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 " Ways to compuile YouCompleteMe
-" Download LLVM and CLANG (v3.9 and higher)
-" from http://llvm.org/releases/download.html
-" Vim (v7.4.143 or higher and compile with Python(done with configure))
-" Cmake (v3.7 or higher)
+" 1. Download LLVM and CLANG (v3.9 and higher)  [url]http://llvm.org/releases/download.html
+" Vim (v7.4.143 or higher and compile with Python(done with configure)) [url]https://github.com/vim/vim.git
+" Cmake (v3.7 or higher) [url]https://cmake.org/files/v3.7/cmake-3.7.0.tar.gz
 " Compile LLVM and CLANG and put them in to a same file
+
 " Run Commands below
 " cd ~
 " mkdir ycm_build
 " cd ycm_build
 " cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=/home/liyunkai/local/llvm+clang/ -DEXTERNAL_LIBCLANG_PATH=/home/liyunkai/local/llvm+clang/lib/libclang.so . ~/.exvim/vimfiles/bundle/YouCompleteMe/third_party/ycmd/cpp
 " cmake --build . --target ycm_core --config Release
+
+" MODIFY files in /home/liyunkai/.exvim/vimfiles/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py
 
 " remap Ultisnips for compatibility for YCM
 let g:UltiSnipsExpandTrigger = '<C-j>'
