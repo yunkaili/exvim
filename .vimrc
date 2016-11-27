@@ -119,6 +119,19 @@ else
     set t_Co=256 " make sure our terminal use 256 color
     let g:solarized_termcolors = 256
 endif
+
+" Allow to trigger background
+function! ToggleBG()
+    let s:tbg = &background
+    " Inversion
+    if s:tbg == "dark"
+        set background=light
+    else
+        set background=dark
+    endif
+endfunction
+noremap <leader>bg :call ToggleBG()<CR>
+
 colorscheme solarized
 " colorscheme exlightgray
 " colorscheme gruvbox
@@ -129,6 +142,8 @@ colorscheme solarized
 
 "set path=.,/usr/include/*,, " where gf, ^Wf, :find will search
 set backup " make backup file and leave it around
+
+set spell
 
 " setup back and swap directory
 let data_dir = $HOME.'/.data/'
@@ -162,9 +177,9 @@ set maxmempattern=1000 " enlarge maxmempattern from 1000 to ... (2000000 will gi
 "/////////////////////////////////////////////////////////////////////////////
 
 " behave xterm  " set mouse behavior as xterm
-" if &term =~ 'xterm'
-"     set mouse=a
-" endif
+if &term =~ 'xterm'
+    set mouse=a
+endif
 
 "/////////////////////////////////////////////////////////////////////////////
 " Variable settings ( set all )
@@ -265,6 +280,20 @@ set guioptions+=b " present the bottom scrollbar when the longest visible line e
 " disable menu & toolbar
 set guioptions-=m
 set guioptions-=T
+
+" spf13
+set cursorline                  " Highlight current line
+highlight clear SignColumn      " SignColumn should match background
+highlight clear LineNr          " Current line number row will have same background color in relative mode
+
+set linespace=0                 " No extra spaces between rows
+set winminheight=0              " Windows can be 0 line high
+set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
+set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
+set scrolljump=5                " Lines to scroll when cursor leaves screen
+set scrolloff=3                 " Minimum lines to keep above and below cursor
+set foldenable                  " Auto fold code
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
 " ------------------------------------------------------------------
 " Desc: Text edit
@@ -480,6 +509,18 @@ vnoremap > >gv
 " map Up & Down to gj & gk, helpful for wrap text edit
 noremap <Up> gk
 noremap <Down> gj
+
+if has("user_commands")
+    command! -bang -nargs=* -complete=file E e<bang> <args>
+    command! -bang -nargs=* -complete=file W w<bang> <args>
+    command! -bang -nargs=* -complete=file Wq wq<bang> <args>
+    command! -bang -nargs=* -complete=file WQ wq<bang> <args>
+    command! -bang Wa wa<bang>
+    command! -bang WA wa<bang>
+    command! -bang Q q<bang>
+    command! -bang QA qa<bang>
+    command! -bang Qa qa<bang>
+endif
 
 " TODO: I should write a better one, make it as plugin exvim/swapword
 " VimTip 329: A map for swapping words
