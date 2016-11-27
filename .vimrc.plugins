@@ -173,10 +173,6 @@ let g:tagbar_type_cpp = {
 " " let g:miniBufExplDebugMode  = 3
 " " let g:miniBufExplDebugLevel = 0
 
-" ex-autocomplpop: invoke when you input text
-" ---------------------------------------------------
-" Plugin 'exvim/ex-autocomplpop'
-
 " ex-showmarks: invoke by m... or <leader>mm, <leader>ma
 " ---------------------------------------------------
 Plugin 'exvim/ex-showmarks'
@@ -299,6 +295,14 @@ Plugin 'scrooloose/nerdtree'
 let g:NERDTreeWinSize = 30
 let g:NERDTreeMouseMode = 1
 let g:NERDTreeMapToggleZoom = '<Space>'
+let g:NERDTreeShowBookmarks=1
+let g:NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+let g:NERDTreeChDirMode=0
+let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeShowHidden=1
+let g:NERDTreeKeepTreeInNewTab=1
+let g:nerdtree_tabs_open_on_gui_startup=0
+
 
 " nerdcommenter: invoke by <leader>c<space>, <leader>cl, <leader>cu, <F11> or <C-F11>
 " ---------------------------------------------------
@@ -319,108 +323,6 @@ Plugin 'scrooloose/syntastic'
 " this will make html file by Angular.js ignore errors
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_javascript_checkers = ['eslint']
-
-" DISABLE: use ex-autocomplpop instead
-" " neocomplcache: invoke when you insert words
-" Plugin 'Shougo/neocomplcache.vim'
-" " ---------------------------------------------------
-
-" let g:neocomplcache_enable_at_startup = 1
-" let g:neocomplcache_auto_completion_start_length = 2
-" let g:neocomplcache_enable_smart_case = 1
-" let g:neocomplcache_enable_auto_select = 1 " let neocomplcache's completion behavior like AutoComplPop
-" " let g:neocomplcache_disable_auto_complete = 1 " Enable this if you like TAB for complete
-" " inoremap <C-p> <C-x><C-u>
-" " inoremap <expr><TAB>  pumvisible() ? '\<Down>' : '<TAB>'
-" " inoremap <expr><S-TAB>  pumvisible() ? '\<Up>' : ''
-
-" DISABLE: use ex-autocomplpop instead
-" neocomplete: invoke when you insert words
-" ---------------------------------------------------
-" Plugin 'Shougo/neocomplete.vim'
-
-" " Enable omni completion.
-" autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-" autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-" autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" " neocomplete {
-" let g:acp_enableAtStartup = 0
-" let g:neocomplete#enable_at_startup = 1
-" let g:neocomplete#enable_smart_case = 1
-" let g:neocomplete#enable_auto_delimiter = 1
-" let g:neocomplete#max_list = 15
-" let g:neocomplete#force_overwrite_completefunc = 1
-
-" " Define dictionary.
-" let g:neocomplete#sources#dictionary#dictionaries = {
-"     \ 'default' : '',
-"     \ 'vimshell' : $HOME.'/.vimshell_hist',
-"     \ 'scheme' : $HOME.'/.gosh_completions'
-"     \ }
-
-"     " Define keyword.
-"     if !exists('g:neocomplete#keyword_patterns')
-"         let g:neocomplete#keyword_patterns = {}
-"     endif
-"     let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-"     " Plugin key-mappings {
-"     inoremap <CR> <CR>
-"     " <ESC> takes you out of insert mode
-"     inoremap <expr> <Esc>   pumvisible() ? "\<C-y>\<Esc>" : "\<Esc>"
-"     " <CR> accepts first, then sends the <CR>
-"     inoremap <expr> <CR>    pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
-"     " <Down> and <Up> cycle like <Tab> and <S-Tab>
-"     inoremap <expr> <Down>  pumvisible() ? "\<C-n>" : "\<Down>"
-"     inoremap <expr> <Up>    pumvisible() ? "\<C-p>" : "\<Up>"
-"     " Jump up and down the list
-"     inoremap <expr> <C-d>   pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-d>"
-"     inoremap <expr> <C-u>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
-
-"      " <TAB>: completion.
-"     inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-"     inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
-
-"     " Courtesy of Matteo Cavalleri
-
-"     function! CleverTab()
-"         if pumvisible()
-"             return "\<C-n>"
-"         endif
-"         let substr = strpart(getline('.'), 0, col('.') - 1)
-"         let substr = matchstr(substr, '[^ \t]*$')
-"         if strlen(substr) == 0
-"             " nothing
-"             to match on empty string
-"             return "\<Tab>"
-"         else
-"             " existing
-"             text matching
-"             if neosnippet#expandable_or_jumpable()
-"                 return "\<Plug>(neosnippet_expand_or_jump)"
-"             else
-"                 return neocomplete#start_manual_complete()
-"             endif
-"         endif
-"     endfunction
-
-"     imap <expr> <Tab> CleverTab()
-"     "}
-
-"     " Enable heavy omni completion.
-"     if !exists('g:neocomplete#sources#omni#input_patterns')
-"         let g:neocomplete#sources#omni#input_patterns = {}
-"     endif
-"     let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"     let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-"     let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-"     let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-"     let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
-" "}
-
 
 " SirVer/ultisnips
 " ---------------------------------------------------
@@ -530,6 +432,24 @@ function! g:Tabular(ignore_range) range
         exec printf('Tabularize /%s', c)
     endif
 endfunction
+
+nmap <Leader>a& :Tabularize /&<CR>
+vmap <Leader>a& :Tabularize /&<CR>
+nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+nmap <Leader>a=> :Tabularize /=><CR>
+vmap <Leader>a=> :Tabularize /=><CR>
+nmap <Leader>a: :Tabularize /:<CR>
+vmap <Leader>a: :Tabularize /:<CR>
+nmap <Leader>a:: :Tabularize /:\zs<CR>
+vmap <Leader>a:: :Tabularize /:\zs<CR>
+nmap <Leader>a, :Tabularize /,<CR>
+vmap <Leader>a, :Tabularize /,<CR>
+nmap <Leader>a,, :Tabularize /,\zs<CR>
+vmap <Leader>a,, :Tabularize /,\zs<CR>
+nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+
 
 " vim-easymotion: invoke by <leader><leader> w,b,e,ge,f,F,h,i,j,k,/
 " ---------------------------------------------------
