@@ -143,7 +143,7 @@ colorscheme solarized
 "set path=.,/usr/include/*,, " where gf, ^Wf, :find will search
 set backup " make backup file and leave it around
 
-set spell
+" set spell
 
 " setup back and swap directory
 let data_dir = $HOME.'/.data/'
