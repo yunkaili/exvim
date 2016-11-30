@@ -120,6 +120,10 @@ else
     let g:solarized_termcolors = 256
 endif
 
+if exists('$TMUX')
+    set term=screen-256color
+endif
+
 " Allow to trigger background
 function! ToggleBG()
     let s:tbg = &background
