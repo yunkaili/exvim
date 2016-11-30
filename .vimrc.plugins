@@ -216,6 +216,11 @@ Plugin 'morhetz/gruvbox'
 
 " let g:gruvbox_contrast_dark = 'soft'
 
+" vim-trailing-whitespace
+" ---------------------------------------------------
+Plugin 'bronson/vim-trailing-whitespace'
+
+
 " auto-close
 " ---------------------------------------------------
 Plugin 'vim-scripts/AutoClose'
