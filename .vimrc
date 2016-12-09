@@ -181,9 +181,9 @@ set maxmempattern=1000 " enlarge maxmempattern from 1000 to ... (2000000 will gi
 "/////////////////////////////////////////////////////////////////////////////
 
 " behave xterm  " set mouse behavior as xterm
-if &term =~ 'xterm'
-    set mouse=a
-endif
+" if &term =~ 'xterm'
+"     set mouse=a
+" endif
 
 "/////////////////////////////////////////////////////////////////////////////
 " Variable settings ( set all )
@@ -524,6 +524,7 @@ if has("user_commands")
     command! -bang Q q<bang>
     command! -bang QA qa<bang>
     command! -bang Qa qa<bang>
+    command! -bang Xa xa<bang>
 endif
 
 " TODO: I should write a better one, make it as plugin exvim/swapword
