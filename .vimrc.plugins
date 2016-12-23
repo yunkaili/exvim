@@ -216,10 +216,13 @@ Plugin 'morhetz/gruvbox'
 
 " let g:gruvbox_contrast_dark = 'soft'
 
+" cctree
+" ---------------------------------------------------
+Plugin 'hari-rangarajan/CCTree'
 
 " auto-close
 " ---------------------------------------------------
-Plugin 'vim-scripts/AutoClose'
+Plugin 'spf13/vim-autoclose'
 
 let g:autoclose_vim_commentmode = 1
 
@@ -303,7 +306,6 @@ let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeShowHidden=1
 let g:NERDTreeKeepTreeInNewTab=1
 let g:nerdtree_tabs_open_on_gui_startup=0
-
 
 " nerdcommenter: invoke by <leader>c<space>, <leader>cl, <leader>cu, <F11> or <C-F11>
 " ---------------------------------------------------
