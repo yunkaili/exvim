@@ -223,7 +223,6 @@ Plugin 'vim-scripts/AutoClose'
 
 let g:autoclose_vim_commentmode = 1
 
-
 " vim-airline-themes
 " ---------------------------------------------------
 Plugin 'vim-airline/vim-airline-themes'
@@ -324,6 +323,14 @@ Plugin 'scrooloose/syntastic'
 " this will make html file by Angular.js ignore errors
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_javascript_checkers = ['eslint']
+
+" DISABLE
+" if using ex-autocomplpop,
+" close SirVer/ultisnips, honza/vim-snippets, Valloric/YouCompleteMe
+" ex-autocomplpop: invoke when you input text
+" ---------------------------------------------------
+"  Plugin 'exvim/ex-autocomplpop'
+
 
 " SirVer/ultisnips
 " ---------------------------------------------------
