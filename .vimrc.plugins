@@ -358,6 +358,7 @@ let g:ycm_global_ycm_extra_conf = '/home/liyunkai/.exvim/vimfiles/bundle/YouComp
 " Ways to compuile YouCompleteMe
 " 1. Download LLVM and CLANG (v3.9 and higher)  [url]http://llvm.org/releases/download.html
 " Vim (v7.4.143 or higher and compile with Python(done with configure)) [url]https://github.com/vim/vim.git
+" ./configure --enable-pythoninterp  --with-python-config-dir=/home/liyunkai/local/anaconda2/lib/python2.7/config --prefix=/to/your/path
 " Cmake (v3.7 or higher) [url]https://cmake.org/files/v3.7/cmake-3.7.0.tar.gz
 " Compile LLVM and CLANG and put them in to a same file
 
