@@ -527,12 +527,12 @@ autocmd FileType html,css EmmetInstall
 
 " Yggdroot/indentLine: invoke by <leader>ig
 " ---------------------------------------------------
-Plugin 'Yggdroot/indentLine'
-nnoremap <unique> <leader>ig :IndentLinesToggle<CR>
-let g:indentLine_showFirstIndentLevel = 0
-let g:indentLine_enabled = 1
-let g:indentLine_char = '┆'
-let g:indentLine_color_term = 239
+"Plugin 'Yggdroot/indentLine'
+"nnoremap <unique> <leader>ig :IndentLinesToggle<CR>
+"let g:indentLine_showFirstIndentLevel = 0
+"let g:indentLine_enabled = 1
+"let g:indentLine_char = '┆'
+"let g:indentLine_color_term = 239
 
 " vim-javascript
 " ---------------------------------------------------
