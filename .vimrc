@@ -287,8 +287,12 @@ set guioptions-=T
 
 " spf13
 set cursorline                  " Highlight current line
-highlight clear SignColumn      " SignColumn should match background
+" highlight clear SignColumn      " SignColumn should match background
 highlight clear LineNr          " Current line number row will have same background color in relative mode
+
+set cursorcolumn                " Highlight current colum
+" highlight CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
+highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 
 set linespace=0                 " No extra spaces between rows
 set winminheight=0              " Windows can be 0 line high
