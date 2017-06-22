@@ -290,7 +290,7 @@ set cursorline                  " Highlight current line
 " highlight clear SignColumn      " SignColumn should match background
 highlight clear LineNr          " Current line number row will have same background color in relative mode
 
-set cursorcolumn                " Highlight current colum
+" set cursorcolumn                " Highlight current colum
 " highlight CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 
