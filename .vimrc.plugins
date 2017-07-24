@@ -189,6 +189,7 @@ let g:autoclose_vim_commentmode = 1
 " vim-airline-themes
 " ---------------------------------------------------
 " Plugin 'vim-airline/vim-airline-themes'
+" let g:airline_theme='simple'
 
 " DISABLE: vim-airline makes Vim editing slow when there are too many buffers opened
 "          if you don't mind, and love this plugin, uncomment the script below
@@ -436,7 +437,7 @@ vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 
 " vim-easymotion: invoke by <leader><leader> w,b,e,ge,f,F,h,i,j,k,/
 " ---------------------------------------------------
-Plugin 'Lokaltog/vim-easymotion'
+Plugin 'easymotion/vim-easymotion'
 
 map <leader><leader>/ <Plug>(easymotion-sn)
 omap <leader><leader>/ <Plug>(easymotion-tn)

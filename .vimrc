@@ -136,11 +136,8 @@ function! ToggleBG()
 endfunction
 noremap <leader>bg :call ToggleBG()<CR>
 
-" colorscheme solarized
-colorscheme gruvbox
-
-" vim-ariline
-" let g:airline_theme='powerlineish'
+colorscheme solarized
+" colorscheme gruvbox
 
 "/////////////////////////////////////////////////////////////////////////////
 " General
