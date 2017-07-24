@@ -160,61 +160,22 @@ let g:tagbar_type_cpp = {
     \ ],
 \ }
 
-" DISABLE: minibufexpl makes Vim editing slow when there are too many buffers opened
-"          if you don't mind, and love this plugin, uncomment the script below
-"          to enable it
-" ex-minibufexpl
+" matchit.zip: invoke by %
 " ---------------------------------------------------
-" Plugin 'exvim/ex-minibufexpl'
-" let g:miniBufExplBuffersNeeded = 0
-" let g:miniBufExplUseSingleClick = 1 " If you would like to single click on tabs rather than double clicking on them to goto the selected buffer.
-" let g:miniBufExplMaxSize = 1 " <max lines: default 0> setting this to 0 will mean the window gets as big as needed to fit all your buffers.
-" let g:miniBufExplTabWrap = 1
-" " let g:miniBufExplDebugMode  = 3
-" " let g:miniBufExplDebugLevel = 0
+Plugin 'vim-scripts/matchit.zip'
 
-" ex-showmarks: invoke by m... or <leader>mm, <leader>ma
+" SearchComplete: invoke by /
 " ---------------------------------------------------
-Plugin 'exvim/ex-showmarks'
+Plugin 'vim-scripts/SearchComplete'
 
-" TODO: bootleq/ShowMarks on github is well organized in code, but have lots
-" bugs, consider merge his code and fixes the bugs
-let g:showmarks_enable = 1
-let g:showmarks_include = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-let g:showmarks_ignore_type = 'hqm' " Ignore help, quickfix, non-modifiable buffers
-" Hilight lower & upper marks
-let g:showmarks_hlline_lower = 1
-let g:showmarks_hlline_upper = 0
-
-" ex-visincr: invoke when select text and type ':II'
+" vim-colorschemes
 " ---------------------------------------------------
-Plugin 'exvim/ex-visincr'
-
-" ex-matchit: invoke by %
-" ---------------------------------------------------
-Plugin 'exvim/ex-matchit'
-
-" ex-easyhl:
-" ---------------------------------------------------
-" Plugin 'exvim/ex-easyhl'
-
-" searchcompl: invoke by /
-" ---------------------------------------------------
-Plugin 'exvim/ex-searchcompl'
-
-" ex-colorschemes
-" ---------------------------------------------------
-Plugin 'exvim/ex-colorschemes'
-
-" vim-color-solarized
-" ---------------------------------------------------
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'flazz/vim-colorschemes'
 
 " vim-color-gruvbox
 " ---------------------------------------------------
 Plugin 'morhetz/gruvbox'
-
-" let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_contrast_dark = 'hard'
 
 " cctree
 " ---------------------------------------------------
@@ -223,20 +184,18 @@ Plugin 'hari-rangarajan/CCTree'
 " auto-close
 " ---------------------------------------------------
 Plugin 'spf13/vim-autoclose'
-
 let g:autoclose_vim_commentmode = 1
 
 " vim-airline-themes
 " ---------------------------------------------------
-Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme='powerlineish'
+" Plugin 'vim-airline/vim-airline-themes'
 
 " DISABLE: vim-airline makes Vim editing slow when there are too many buffers opened
 "          if you don't mind, and love this plugin, uncomment the script below
 "          to enable it
 " vim-airline
 " ---------------------------------------------------
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 
 if has('gui_running')
     let g:airline_powerline_fonts = 1
@@ -548,15 +507,15 @@ autocmd FileType html,css EmmetInstall
 
 " vim-javascript
 " ---------------------------------------------------
-Plugin 'pangloss/vim-javascript'
+" Plugin 'pangloss/vim-javascript'
 
 " vim-coffee-script
 " ---------------------------------------------------
-Plugin 'kchmck/vim-coffee-script'
+" Plugin 'kchmck/vim-coffee-script'
 
 " vim-html
 " ---------------------------------------------------
-Plugin 'exvim/ex-indenthtml.vim'
+" Plugin 'exvim/ex-indenthtml.vim'
 
 
 " DISABLE: Slow to open big css file
@@ -565,18 +524,18 @@ Plugin 'exvim/ex-indenthtml.vim'
 " Plugin 'skammer/vim-css-color'
 
 " vim-css3-syntax
-Plugin 'hail2u/vim-css3-syntax'
+" Plugin 'hail2u/vim-css3-syntax'
 
 " vim-jade
-Plugin 'digitaltoad/vim-jade'
+" Plugin 'digitaltoad/vim-jade'
 
 " vim-less
 " ---------------------------------------------------
-Plugin 'groenewege/vim-less'
+" Plugin 'groenewege/vim-less'
 
 " vim-stylus
 " ---------------------------------------------------
-Plugin 'wavded/vim-stylus'
+" Plugin 'wavded/vim-stylus'
 
 " vim-markdown
 " ---------------------------------------------------

@@ -136,9 +136,11 @@ function! ToggleBG()
 endfunction
 noremap <leader>bg :call ToggleBG()<CR>
 
-colorscheme solarized
-" colorscheme exlightgray
-" colorscheme gruvbox
+" colorscheme solarized
+colorscheme gruvbox
+
+" vim-ariline
+" let g:airline_theme='powerlineish'
 
 "/////////////////////////////////////////////////////////////////////////////
 " General
@@ -290,7 +292,7 @@ set cursorline                  " Highlight current line
 " highlight clear SignColumn      " SignColumn should match background
 highlight clear LineNr          " Current line number row will have same background color in relative mode
 
-" set cursorcolumn                " Highlight current colum
+set cursorcolumn                " Highlight current colum
 " highlight CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 
