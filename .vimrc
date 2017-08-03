@@ -136,7 +136,9 @@ function! ToggleBG()
 endfunction
 noremap <leader>bg :call ToggleBG()<CR>
 
-colorscheme solarized
+colorscheme dracula
+" colorscheme kalisi
+" colorscheme solarized
 " colorscheme gruvbox
 
 "/////////////////////////////////////////////////////////////////////////////
@@ -343,7 +345,11 @@ set nf=
 " Desc: Fold text
 " ------------------------------------------------------------------
 
-set foldmethod=marker foldmarker={,} foldlevel=0
+" C/C++ like
+" set foldmethod=marker foldmarker={,} foldlevel=0
+
+" Python
+set foldmethod=indent foldlevel=0
 set diffopt=filler,context:9999
 
 " ------------------------------------------------------------------

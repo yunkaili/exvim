@@ -174,8 +174,28 @@ Plugin 'flazz/vim-colorschemes'
 
 " vim-color-gruvbox
 " ---------------------------------------------------
-Plugin 'morhetz/gruvbox'
-let g:gruvbox_contrast_dark = 'hard'
+" Plugin 'morhetz/gruvbox'
+" let g:gruvbox_contrast_dark = 'soft'
+
+" altercation/vim-colors-solarized
+" ---------------------------------------------------
+" Plugin 'altercation/vim-colors-solarized'
+
+" sentientmachine/Pretty-Vim-Python
+" ---------------------------------------------------
+Plugin 'sentientmachine/Pretty-Vim-Python'
+
+" freeo/vim-kalisi
+" ---------------------------------------------------
+" Plugin 'freeo/vim-kalisi'
+
+" dracula/vim
+" ---------------------------------------------------
+Plugin 'dracula/vim'
+
+" w0rp/ale
+" ---------------------------------------------------
+" Plugin 'w0rp/ale'
 
 " cctree
 " ---------------------------------------------------
@@ -188,8 +208,8 @@ let g:autoclose_vim_commentmode = 1
 
 " vim-airline-themes
 " ---------------------------------------------------
-" Plugin 'vim-airline/vim-airline-themes'
-" let g:airline_theme='simple'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_theme='dracula'
 
 " DISABLE: vim-airline makes Vim editing slow when there are too many buffers opened
 "          if you don't mind, and love this plugin, uncomment the script below
@@ -272,19 +292,27 @@ Plugin 'scrooloose/nerdcommenter'
 
 let g:NERDSpaceDelims = 1
 let g:NERDRemoveExtraSpaces = 1
+let g:NERDTrimTrailingWhitespace = 1
 let g:NERDCustomDelimiters = {
             \ 'vimentry': { 'left': '--' },
             \ }
-map <unique> <F11> <Plug>NERDCommenterAlignBoth
-map <unique> <C-F11> <Plug>NERDCommenterUncomment
+" map <unique> <F11> <Plug>NERDCommenterAlignBoth
+" map <unique> <C-F11> <Plug>NERDCommenterUncomment
 
 " syntastic: invoke when you save file and have syntac-checker
 " ---------------------------------------------------
 Plugin 'scrooloose/syntastic'
 
-" this will make html file by Angular.js ignore errors
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-let g:syntastic_javascript_checkers = ['eslint']
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['autopep8']
+
 
 " DISABLE
 " if using ex-autocomplpop,
