@@ -557,4 +557,7 @@ if filereadable(expand(vimrc_local_path))
     exec 'source ' . fnameescape(vimrc_local_path)
 endif
 
+set textwidth=100
+set colorcolumn=+1
+
 " vim:ts=4:sw=4:sts=4 et fdm=marker:

@@ -309,11 +309,11 @@ Plugin 'scrooloose/syntastic'
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 2
 let g:syntastic_check_on_wq = 1
-let g:syntastic_python_python_exec = 'python3'
-let g:syntastic_python_pylint3_args = '--rcfile=/home/liyunkai/.pylintrc'
-let g:syntastic_python_checkers = ['autopep8', 'pylint']
+" let g:syntastic_python_python_exec = 'python3'
+" let g:syntastic_python_pylint3_args = '--rcfile=/home/liyunkai/.pylintrc'
+let g:syntastic_python_checkers = ['autopep8']
 
 
 " DISABLE
@@ -344,7 +344,7 @@ inoremap <unique> <C-_> <C-X><C-O><C-P>
 
 " enable completion from tags
 let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_python_binary_path = 'python'
+let g:ycm_python_binary_path = 'python3'
 let g:ycm_global_ycm_extra_conf = '/home/liyunkai/.exvim/vimfiles/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 " Ways to compuile YouCompleteMe
