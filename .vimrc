@@ -294,6 +294,7 @@ highlight clear LineNr          " Current line number row will have same backgro
 set cursorcolumn                " Highlight current colum
 " highlight CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
+highlight Pmenu guibg=blue ctermfg=red
 
 set linespace=0                 " No extra spaces between rows
 set winminheight=0              " Windows can be 0 line high
