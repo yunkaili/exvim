@@ -9,7 +9,7 @@ source $VIMRUNTIME/ftplugin/man.vim
 
 " let Vundle manage Vundle, required
 " ---------------------------------------------------
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 "}}}
 
@@ -209,7 +209,7 @@ let g:autoclose_vim_commentmode = 1
 " vim-airline-themes
 " ---------------------------------------------------
 Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme='dracula'
+let g:airline_theme='molokai'
 
 " DISABLE: vim-airline makes Vim editing slow when there are too many buffers opened
 "          if you don't mind, and love this plugin, uncomment the script below
