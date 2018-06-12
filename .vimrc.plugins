@@ -209,11 +209,7 @@ let g:autoclose_vim_commentmode = 1
 " vim-airline-themes
 " ---------------------------------------------------
 Plugin 'vim-airline/vim-airline-themes'
-<<<<<<< HEAD
-let g:airline_theme='jellybeans'
-=======
 let g:airline_theme='molokai'
->>>>>>> cb77eefef0aae5f368e0cb6ecc98d80d09874df1
 
 " DISABLE: vim-airline makes Vim editing slow when there are too many buffers opened
 "          if you don't mind, and love this plugin, uncomment the script below
