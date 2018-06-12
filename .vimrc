@@ -294,6 +294,9 @@ highlight clear LineNr          " Current line number row will have same backgro
 set cursorcolumn                " Highlight current colum
 " highlight CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
+highlight Pmenu guibg=blue ctermfg=red
+" highlight Search guibg=peru guifg=wheat
+highlight Search ctermbg=Yellow ctermfg=Red
 
 set linespace=0                 " No extra spaces between rows
 set winminheight=0              " Windows can be 0 line high
@@ -332,9 +335,11 @@ function! g:MyDiff()
     silent execute '!' .  'diff ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
 endfunction
 
-set cindent shiftwidth=2 " set cindent on to autoinent when editing c/c++ file, with 4 shift width
-set tabstop=2 " set tabstop to 4 characters
+set cindent shiftwidth=2 " set cindent on to autoinent when editing c/c++ file, with 2 shift width
 set expandtab " set expandtab on, the tab will be change to space automaticaly
+set shiftwidth=2
+set tabstop=2 " set tabstop to 2 characters
+set softtabstop=2
 set ve=block " in visual block mode, cursor can be positioned where there is no actual character
 
 " set Number format to null(default is octal) , when press CTRL-A on number
@@ -560,4 +565,9 @@ endif
 set textwidth=100
 set colorcolumn=+1
 
-" vim:ts=4:sw=4:sts=4 et fdm=marker:
+set expandtab " set expandtab on, the tab will be change to space automaticaly
+set shiftwidth=2
+set tabstop=2 " set tabstop to 2 characters
+set softtabstop=2
+
+" vim:ts=2:sw=2:sts=2 et fdm=marker:

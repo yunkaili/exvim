@@ -209,7 +209,7 @@ let g:autoclose_vim_commentmode = 1
 " vim-airline-themes
 " ---------------------------------------------------
 Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme='dracula'
+let g:airline_theme='jellybeans'
 
 " DISABLE: vim-airline makes Vim editing slow when there are too many buffers opened
 "          if you don't mind, and love this plugin, uncomment the script below
@@ -313,6 +313,7 @@ let g:syntastic_check_on_open = 2
 let g:syntastic_check_on_wq = 1
 " let g:syntastic_python_python_exec = 'python3'
 " let g:syntastic_python_pylint3_args = '--rcfile=/home/liyunkai/.pylintrc'
+" let g:syntastic_python_checkers = ['autopep8', 'pylint']
 let g:syntastic_python_checkers = ['autopep8']
 
 
