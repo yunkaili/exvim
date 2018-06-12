@@ -295,8 +295,11 @@ set cursorcolumn                " Highlight current colum
 " highlight CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 highlight Pmenu guibg=blue ctermfg=red
+<<<<<<< HEAD
 " highlight Search guibg=peru guifg=wheat
 highlight Search ctermbg=Yellow ctermfg=Red
+=======
+>>>>>>> cb77eefef0aae5f368e0cb6ecc98d80d09874df1
 
 set linespace=0                 " No extra spaces between rows
 set winminheight=0              " Windows can be 0 line high
