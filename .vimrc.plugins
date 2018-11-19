@@ -317,6 +317,10 @@ let g:syntastic_check_on_wq = 1
 let g:syntastic_python_checkers = ['autopep8']
 
 
+" vim-pydocstring
+" ---------------------------------------------------
+Plugin 'heavenshell/vim-pydocstring'
+
 " DISABLE
 " if using ex-autocomplpop,
 " close SirVer/ultisnips, honza/vim-snippets, Valloric/YouCompleteMe
@@ -324,14 +328,20 @@ let g:syntastic_python_checkers = ['autopep8']
 " ---------------------------------------------------
 "  Plugin 'exvim/ex-autocomplpop'
 
-
 " SirVer/ultisnips
 " ---------------------------------------------------
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" let g:UltiSnipsExpandTrigger="<c-n>"
+" let g:UltiSnipsJumpForwardTrigger="<c-n>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+
+" If you want :UltiSnipsEdit to split your window.
+" let g:UltiSnipsEditSplit="vertical"
 
 " honza/vim-snippets
 " ---------------------------------------------------
-Plugin 'honza/vim-snippets'
+" Plugin 'honza/vim-snippets'
 
 " YouCompleteMe
 " ---------------------------------------------------
@@ -573,9 +583,8 @@ autocmd FileType html,css EmmetInstall
 
 " vim-markdown
 " ---------------------------------------------------
-Plugin 'plasticboy/vim-markdown'
-
-let g:vim_markdown_initial_foldlevel=9999
+" Plugin 'plasticboy/vim-markdown'
+" let g:vim_markdown_initial_foldlevel=9999
 
 "}}}
 
