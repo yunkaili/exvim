@@ -321,6 +321,8 @@ let g:syntastic_python_checkers = ['autopep8']
 " ---------------------------------------------------
 Plugin 'heavenshell/vim-pydocstring'
 
+nmap <silent> <C-t> <Plug>(pydocstring)
+
 " DISABLE
 " if using ex-autocomplpop,
 " close SirVer/ultisnips, honza/vim-snippets, Valloric/YouCompleteMe
