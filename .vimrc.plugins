@@ -33,7 +33,7 @@ nmap <unique> <silent> <Leader><Esc> :EXgp<CR><ESC>
 
 " ex-aftercolor
 " ---------------------------------------------------
-Plugin 'exvim/ex-aftercolors'
+" Plugin 'exvim/ex-aftercolors'
 
 " ex-vimentry
 " ---------------------------------------------------
@@ -191,7 +191,7 @@ Plugin 'sentientmachine/Pretty-Vim-Python'
 
 " dracula/vim
 " ---------------------------------------------------
-Plugin 'dracula/vim'
+Plugin 'dracula/vim', { 'as': 'dracula' }
 
 " w0rp/ale
 " ---------------------------------------------------
@@ -209,11 +209,12 @@ let g:autoclose_vim_commentmode = 1
 " vim-airline-themes
 " ---------------------------------------------------
 Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme='molokai'
+let g:airline_theme='dracula'
 
 " DISABLE: vim-airline makes Vim editing slow when there are too many buffers opened
 "          if you don't mind, and love this plugin, uncomment the script below
 "          to enable it
+
 " vim-airline
 " ---------------------------------------------------
 Plugin 'vim-airline/vim-airline'
