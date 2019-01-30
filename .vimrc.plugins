@@ -415,37 +415,37 @@ set completeopt-=preview
 
 " 'vim-python/python-syntax'
 " ---------------------------------------------------
-" Plugin 'vim-python/python-syntax'
+Plugin 'vim-python/python-syntax'
 " Highlight builtin functions and objects
-" let g:python_highlight_builtins
+let g:python_highlight_builtins=1
 " Highlight builtin objects only
-" let g:python_highlight_builtin_objs
+let g:python_highlight_builtin_objs=1
 " Highlight builtin functions only
-" let g:python_highlight_builtin_funcs
+let g:python_highlight_builtin_funcs=1
 " Highlight standard exceptions
-" let g:python_highlight_exceptions
+let g:python_highlight_exceptions=1
 " Highlight % string formatting
-" let g:python_highlight_string_formatting
+let g:python_highlight_string_formatting=1
 " Highlight syntax of str.format syntax
-" let g:python_highlight_string_format
+let g:python_highlight_string_format=1
 " Highlight syntax of string.Template
-" let g:python_highlight_string_templates
+let g:python_highlight_string_templates=1
 " Highlight indentation errors
-" let g:python_highlight_indent_errors
+let g:python_highlight_indent_errors=1
 " Highlight trailing spaces
-" let g:python_highlight_space_errors
+let g:python_highlight_space_errors=1
 " Highlight doc-tests
-" let g:python_highlight_doctests
+let g:python_highlight_doctests=1
 " Highlight class variables self and cls
-" let g:python_highlight_class_vars
+let g:python_highlight_class_vars=1
 " Highlight all operators
-" let g:python_highlight_operators
+let g:python_highlight_operators=1
 " Enable all highlight options above, except for previously set.
-" let g:python_highlight_all=1
+let g:python_highlight_all=1
 " Highlight shebang and coding headers as comments
-" let g:python_highlight_file_headers_as_comments
+let g:python_highlight_file_headers_as_comments=1
 
-Plugin 'wmayner/python3-syntax'
+" Plugin 'wmayner/python3-syntax'
 
 " TODO: choose a snippet plugin
 " Plugin 'Shougo/neosnippet.vim'
