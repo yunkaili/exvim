@@ -561,12 +561,12 @@ if filereadable(expand(vimrc_local_path))
     exec 'source ' . fnameescape(vimrc_local_path)
 endif
 
-set textwidth=100
+" set textwidth=100
 set colorcolumn=+1
 
-set expandtab " set expandtab on, the tab will be change to space automaticaly
-set shiftwidth=2
-set tabstop=2 " set tabstop to 2 characters
-set softtabstop=2
+" set expandtab " set expandtab on, the tab will be change to space automaticaly
+" set shiftwidth=2
+" set tabstop=2 " set tabstop to 2 characters
+" set softtabstop=2
 
 " vim:ts=2:sw=2:sts=2 et fdm=marker:
