@@ -31,10 +31,6 @@ nnoremap <unique> <silent> <C-Tab> :EXbalt<CR>
 nnoremap <unique> <silent> <Leader><Tab> :EXsw<CR>
 nmap <unique> <silent> <Leader><Esc> :EXgp<CR><ESC>
 
-" ex-aftercolor
-" ---------------------------------------------------
-" Plugin 'exvim/ex-aftercolors'
-
 " ex-vimentry
 " ---------------------------------------------------
 Plugin 'exvim/ex-vimentry'
@@ -170,32 +166,16 @@ Plugin 'vim-scripts/SearchComplete'
 
 " vim-colorschemes
 " ---------------------------------------------------
-Plugin 'flazz/vim-colorschemes'
-
-" vim-color-gruvbox
-" ---------------------------------------------------
-" Plugin 'morhetz/gruvbox'
-" let g:gruvbox_contrast_dark = 'soft'
-
-" altercation/vim-colors-solarized
-" ---------------------------------------------------
-" Plugin 'altercation/vim-colors-solarized'
+" Plugin 'flazz/vim-colorschemes'
 
 " sentientmachine/Pretty-Vim-Python
 " ---------------------------------------------------
 Plugin 'sentientmachine/Pretty-Vim-Python'
 
-" freeo/vim-kalisi
-" ---------------------------------------------------
-" Plugin 'freeo/vim-kalisi'
 
 " dracula/vim
 " ---------------------------------------------------
 Plugin 'dracula/vim', { 'as': 'dracula' }
-
-" w0rp/ale
-" ---------------------------------------------------
-" Plugin 'w0rp/ale'
 
 " cctree
 " ---------------------------------------------------
@@ -327,10 +307,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 2
 let g:syntastic_check_on_wq = 1
-" let g:syntastic_python_python_exec = 'python3'
-" let g:syntastic_python_pylint3_args = '--rcfile=/home/liyunkai/.pylintrc'
-" let g:syntastic_python_checkers = ['autopep8', 'pylint']
-let g:syntastic_python_checkers = ['autopep8']
+let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_pylint3_args = '--rcfile=/home/liyunkai/.pylintrc'
+let g:syntastic_python_checkers = ['autopep8', 'pylint']
+" let g:syntastic_python_checkers = ['autopep8']
 
 
 " vim-pydocstring
@@ -430,37 +410,37 @@ set completeopt-=preview
 
 " 'vim-python/python-syntax'
 " ---------------------------------------------------
-Plugin 'vim-python/python-syntax'
-" Highlight builtin functions and objects
-let g:python_highlight_builtins=1
-" Highlight builtin objects only
-let g:python_highlight_builtin_objs=1
-" Highlight builtin functions only
-let g:python_highlight_builtin_funcs=1
-" Highlight standard exceptions
-let g:python_highlight_exceptions=1
-" Highlight % string formatting
-let g:python_highlight_string_formatting=1
-" Highlight syntax of str.format syntax
-let g:python_highlight_string_format=1
-" Highlight syntax of string.Template
-let g:python_highlight_string_templates=1
-" Highlight indentation errors
-let g:python_highlight_indent_errors=1
-" Highlight trailing spaces
-let g:python_highlight_space_errors=1
-" Highlight doc-tests
-let g:python_highlight_doctests=1
-" Highlight class variables self and cls
-let g:python_highlight_class_vars=1
-" Highlight all operators
-let g:python_highlight_operators=1
-" Enable all highlight options above, except for previously set.
-let g:python_highlight_all=1
-" Highlight shebang and coding headers as comments
-let g:python_highlight_file_headers_as_comments=1
+" Plugin 'vim-python/python-syntax'
+" " Highlight builtin functions and objects
+" let g:python_highlight_builtins=1
+" " Highlight builtin objects only
+" let g:python_highlight_builtin_objs=1
+" " Highlight builtin functions only
+" let g:python_highlight_builtin_funcs=1
+" " Highlight standard exceptions
+" let g:python_highlight_exceptions=1
+" " Highlight % string formatting
+" let g:python_highlight_string_formatting=1
+" " Highlight syntax of str.format syntax
+" let g:python_highlight_string_format=1
+" " Highlight syntax of string.Template
+" let g:python_highlight_string_templates=1
+" " Highlight indentation errors
+" let g:python_highlight_indent_errors=1
+" " Highlight trailing spaces
+" let g:python_highlight_space_errors=1
+" " Highlight doc-tests
+" let g:python_highlight_doctests=1
+" " Highlight class variables self and cls
+" let g:python_highlight_class_vars=1
+" " Highlight all operators
+" let g:python_highlight_operators=1
+" " Enable all highlight options above, except for previously set.
+" let g:python_highlight_all=1
+" " Highlight shebang and coding headers as comments
+" let g:python_highlight_file_headers_as_comments=1
 
-" Plugin 'wmayner/python3-syntax'
+Plugin 'wmayner/python3-syntax'
 
 " TODO: choose a snippet plugin
 " Plugin 'Shougo/neosnippet.vim'

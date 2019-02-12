@@ -294,7 +294,8 @@ highlight clear LineNr          " Current line number row will have same backgro
 set cursorcolumn                " Highlight current colum
 " highlight CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
-highlight Pmenu guibg=blue ctermfg=red
+" highlight Pmenu guibg=blue ctermfg=red
+highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
 highlight Search ctermbg=Yellow ctermfg=Red
 
 set linespace=0                 " No extra spaces between rows
