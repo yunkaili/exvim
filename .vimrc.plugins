@@ -309,8 +309,8 @@ let g:syntastic_check_on_open = 2
 let g:syntastic_check_on_wq = 1
 let g:syntastic_python_python_exec = 'python3'
 let g:syntastic_python_pylint3_args = '--rcfile=/home/liyunkai/.pylintrc'
-let g:syntastic_python_checkers = ['autopep8', 'pylint']
-" let g:syntastic_python_checkers = ['autopep8']
+" let g:syntastic_python_checkers = ['autopep8', 'pylint']
+let g:syntastic_python_checkers = ['autopep8']
 
 
 " vim-pydocstring
@@ -352,9 +352,11 @@ nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 inoremap <unique> <C-_> <C-X><C-O><C-P>
 
 " enable completion from tags
+let g:ycm_complete_in_comments=1
+let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_python_binary_path = 'python3'
-let g:ycm_global_ycm_extra_conf = '/home/liyunkai/.exvim/vimfiles/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '/home/ykli/.exvim/ycm_extra_conf.py'
 
 " Ways to compuile YouCompleteMe
 " 1. Download LLVM and CLANG (v3.9 and higher)  [url]http://llvm.org/releases/download.html
@@ -405,7 +407,7 @@ endif
 " Disable the neosnippet preview candidate window
 " When enabled, there can be too much visual noise
 " especially when splits are used.
-set completeopt-=preview
+" set completeopt-=preview
 
 
 " 'vim-python/python-syntax'
