@@ -319,6 +319,14 @@ Plugin 'heavenshell/vim-pydocstring'
 
 nmap <silent> <C-_> <Plug>(pydocstring)
 
+
+" vim-header
+" ---------------------------------------------------
+Plugin 'alpertuna/vim-header'
+
+let g:header_field_author = 'Yunkai Li'
+let g:header_field_author_email = 'ykli@aibee.cn'
+
 " DISABLE
 " if using ex-autocomplpop,
 " close SirVer/ultisnips, honza/vim-snippets, Valloric/YouCompleteMe
