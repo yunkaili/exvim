@@ -1,3 +1,8 @@
+" File              : .vimrc.plugins
+" Author            : Yunkai Li <ykli@aibee.cn>
+" Date              : 29.03.2019
+" Last Modified Date: 29.03.2019
+" Last Modified By  : Yunkai Li <ykli@aibee.cn>
 " Pathogen or Vundle (deafult is Vundle) {{{
 
 " Comment-out if you want to use pahogen
@@ -326,6 +331,8 @@ Plugin 'alpertuna/vim-header'
 
 let g:header_field_author = 'Yunkai Li'
 let g:header_field_author_email = 'ykli@aibee.cn'
+let g:header_auto_add_header = 0
+map <F2> :AddHeader<CR>
 
 " DISABLE
 " if using ex-autocomplpop,
