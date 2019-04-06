@@ -3,6 +3,7 @@
 " Date              : 29.03.2019
 " Last Modified Date: 29.03.2019
 " Last Modified By  : Yunkai Li <ykli@aibee.cn>
+
 " Pathogen or Vundle (deafult is Vundle) {{{
 
 " Comment-out if you want to use pahogen
@@ -169,15 +170,6 @@ Plugin 'vim-scripts/matchit.zip'
 " ---------------------------------------------------
 Plugin 'vim-scripts/SearchComplete'
 
-" vim-colorschemes
-" ---------------------------------------------------
-" Plugin 'flazz/vim-colorschemes'
-
-" sentientmachine/Pretty-Vim-Python
-" ---------------------------------------------------
-Plugin 'sentientmachine/Pretty-Vim-Python'
-
-
 " dracula/vim
 " ---------------------------------------------------
 Plugin 'dracula/vim', { 'as': 'dracula' }
@@ -250,17 +242,19 @@ let g:airline_section_b = "%{fnamemodify(bufname('%'),':p:.:h').'/'}"
 let g:airline_section_c = '%t'
 
 " ctrlp: invoke by <ctrl-p>
+" Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 " ---------------------------------------------------
-Plugin 'kien/ctrlp.vim'
-let g:ctrlp_working_path_mode = ''
-let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
-let g:ctrlp_follow_symlinks = 2
-let g:ctrlp_max_files = 0 " Unset cap of 10,000 files so we find everything
-nnoremap <unique> <leader>bs :CtrlPBuffer<CR>
+" Plugin 'kien/ctrlp.vim'
+" let g:ctrlp_working_path_mode = ''
+" let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
+" let g:ctrlp_follow_symlinks = 2
+" let g:ctrlp_max_files = 0 " Unset cap of 10,000 files so we find everything
+" nnoremap <unique> <leader>bs :CtrlPBuffer<CR>
 
 " vim-fugitive: invoke most by :Gdiff
+" git tools
 " ---------------------------------------------------
-Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive'
 
 " vim-surround: invoke when you select words and press 's'
 " ---------------------------------------------------
@@ -334,27 +328,6 @@ let g:header_field_author_email = 'ykli@aibee.cn'
 let g:header_auto_add_header = 0
 map <F2> :AddHeader<CR>
 
-" DISABLE
-" if using ex-autocomplpop,
-" close SirVer/ultisnips, honza/vim-snippets, Valloric/YouCompleteMe
-" ex-autocomplpop: invoke when you input text
-" ---------------------------------------------------
-"  Plugin 'exvim/ex-autocomplpop'
-
-" SirVer/ultisnips
-" ---------------------------------------------------
-" Plugin 'SirVer/ultisnips'
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-" let g:UltiSnipsExpandTrigger="<c-n>"
-" let g:UltiSnipsJumpForwardTrigger="<c-n>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-p>"
-
-" If you want :UltiSnipsEdit to split your window.
-" let g:UltiSnipsEditSplit="vertical"
-
-" honza/vim-snippets
-" ---------------------------------------------------
-" Plugin 'honza/vim-snippets'
 
 " YouCompleteMe
 " ---------------------------------------------------
@@ -424,40 +397,11 @@ endif
 " especially when splits are used.
 " set completeopt-=preview
 
-
-" 'vim-python/python-syntax'
+Plugin 'numirias/semshi'
 " ---------------------------------------------------
-" Plugin 'vim-python/python-syntax'
-" " Highlight builtin functions and objects
-" let g:python_highlight_builtins=1
-" " Highlight builtin objects only
-" let g:python_highlight_builtin_objs=1
-" " Highlight builtin functions only
-" let g:python_highlight_builtin_funcs=1
-" " Highlight standard exceptions
-" let g:python_highlight_exceptions=1
-" " Highlight % string formatting
-" let g:python_highlight_string_formatting=1
-" " Highlight syntax of str.format syntax
-" let g:python_highlight_string_format=1
-" " Highlight syntax of string.Template
-" let g:python_highlight_string_templates=1
-" " Highlight indentation errors
-" let g:python_highlight_indent_errors=1
-" " Highlight trailing spaces
-" let g:python_highlight_space_errors=1
-" " Highlight doc-tests
-" let g:python_highlight_doctests=1
-" " Highlight class variables self and cls
-" let g:python_highlight_class_vars=1
-" " Highlight all operators
-" let g:python_highlight_operators=1
-" " Enable all highlight options above, except for previously set.
-" let g:python_highlight_all=1
-" " Highlight shebang and coding headers as comments
-" let g:python_highlight_file_headers_as_comments=1
+ let g:deoplete#auto_complete_delay = 100
+ let g:semshi#mark_selected_nodes = 2
 
-Plugin 'wmayner/python3-syntax'
 
 " TODO: choose a snippet plugin
 " Plugin 'Shougo/neosnippet.vim'
@@ -575,31 +519,11 @@ Plugin 'exvim/ex-typescript'
 
 " emmet-vim
 " ---------------------------------------------------
-Plugin 'mattn/emmet-vim'
+" Plugin 'mattn/emmet-vim'
 
-" make sure emmet only enable in html,css files
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-
-" DISABLE:
-" " vim-indent-guides: invoke by <leader>ig
-" " ---------------------------------------------------
-" Plugin 'nathanaelkane/vim-indent-guides'
-" let g:indent_guides_guide_size = 1
-
-" Yggdroot/indentLine: invoke by <leader>ig
-" ---------------------------------------------------
-"Plugin 'Yggdroot/indentLine'
-"nnoremap <unique> <leader>ig :IndentLinesToggle<CR>
-"let g:indentLine_showFirstIndentLevel = 0
-"let g:indentLine_enabled = 1
-"let g:indentLine_char = '┆'
-"let g:indentLine_color_term = 239
-
-" vim-markdown
-" ---------------------------------------------------
-" Plugin 'plasticboy/vim-markdown'
-" let g:vim_markdown_initial_foldlevel=9999
+" " make sure emmet only enable in html,css files
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css EmmetInstall
 
 "}}}
 

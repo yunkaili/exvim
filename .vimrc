@@ -137,9 +137,6 @@ endfunction
 noremap <leader>bg :call ToggleBG()<CR>
 
 colorscheme dracula
-" colorscheme kalisi
-" colorscheme solarized
-" colorscheme gruvbox
 
 "/////////////////////////////////////////////////////////////////////////////
 " General
@@ -292,9 +289,7 @@ set cursorline                  " Highlight current line
 highlight clear LineNr          " Current line number row will have same background color in relative mode
 
 set cursorcolumn                " Highlight current colum
-" highlight CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
-" highlight Pmenu guibg=blue ctermfg=red
 highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
 highlight Search ctermbg=Yellow ctermfg=Red
 
@@ -337,7 +332,6 @@ endfunction
 
 set cindent shiftwidth=2 " set cindent on to autoinent when editing c/c++ file, with 2 shift width
 set expandtab " set expandtab on, the tab will be change to space automaticaly
-set shiftwidth=2
 set tabstop=2 " set tabstop to 2 characters
 set softtabstop=2
 set ve=block " in visual block mode, cursor can be positioned where there is no actual character
@@ -562,12 +556,6 @@ if filereadable(expand(vimrc_local_path))
     exec 'source ' . fnameescape(vimrc_local_path)
 endif
 
-" set textwidth=100
 set colorcolumn=+1
-
-" set expandtab " set expandtab on, the tab will be change to space automaticaly
-" set shiftwidth=2
-" set tabstop=2 " set tabstop to 2 characters
-" set softtabstop=2
 
 " vim:ts=2:sw=2:sts=2 et fdm=marker:
