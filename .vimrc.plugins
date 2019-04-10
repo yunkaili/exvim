@@ -1,34 +1,25 @@
 " File              : .vimrc.plugins
 " Author            : Yunkai Li <ykli@aibee.cn>
 " Date              : 29.03.2019
-" Last Modified Date: 29.03.2019
+" Last Modified Date: 10.04.2019
 " Last Modified By  : Yunkai Li <ykli@aibee.cn>
-
-" Pathogen or Vundle (deafult is Vundle) {{{
-
-" Comment-out if you want to use pahogen
-" execute pathogen#infect()
-" com! -nargs=+ Bundle
 
 " man.vim: invoked by :Man {name}
 source $VIMRUNTIME/ftplugin/man.vim
 
-" let Vundle manage Vundle, required
-" ---------------------------------------------------
-Plugin 'VundleVim/Vundle.vim'
-
-"}}}
 
 " general plugins {{{
 
+" exvim project
+
 " ex-config:
 " ---------------------------------------------------
-Plugin 'exvim/ex-config'
+Plug 'exvim/ex-config'
 nnoremap <unique> <leader>ve :call exconfig#edit_cur_vimentry ()<CR>
 
 " ex-utility:
 " ---------------------------------------------------
-Plugin 'exvim/ex-utility'
+Plug 'exvim/ex-utility'
 
 nnoremap <unique> <silent> <Leader>bd :EXbd<CR>
 nnoremap <unique> <silent> <C-l> :EXbn<CR>
@@ -39,35 +30,35 @@ nmap <unique> <silent> <Leader><Esc> :EXgp<CR><ESC>
 
 " ex-vimentry
 " ---------------------------------------------------
-Plugin 'exvim/ex-vimentry'
+Plug 'exvim/ex-vimentry'
 
 " ex-project
 " ---------------------------------------------------
-Plugin 'exvim/ex-project'
+Plug 'exvim/ex-project'
 
 " ex-gsearch
 " ---------------------------------------------------
-Plugin 'exvim/ex-gsearch'
+Plug 'exvim/ex-gsearch'
 
-call exgsearch#register_hotkey( 100, 0, '<leader>gs', ":EXGSearchToggle<CR>", 'Toggle global search window.' )
-call exgsearch#register_hotkey( 101, 0, '<leader>gg', ":EXGSearchCWord<CR>", 'Search current word.' )
-call exgsearch#register_hotkey( 102, 0, '<leader><S-f>', ":GS ", 'Shortcut for :GS' )
+" call exgsearch#register_hotkey( 100, 0, '<leader>gs', ":EXGSearchToggle<CR>", 'Toggle global search window.' )
+" call exgsearch#register_hotkey( 101, 0, '<leader>gg', ":EXGSearchCWord<CR>", 'Search current word.' )
+" call exgsearch#register_hotkey( 102, 0, '<leader><S-f>', ":GS ", 'Shortcut for :GS' )
 
 " ex-tagselect
 " ---------------------------------------------------
-Plugin 'exvim/ex-tags'
+Plug 'exvim/ex-tags'
 
-call extags#register_hotkey( 100, 0, '<leader>ts', ":EXTagsToggle<CR>", 'Toggle tag select window.' )
-call extags#register_hotkey( 101, 0, '<leader>]', ":EXTagsCWord<CR>", 'Tag select current word.' )
+" call extags#register_hotkey( 100, 0, '<leader>ts', ":EXTagsToggle<CR>", 'Toggle tag select window.' )
+" call extags#register_hotkey( 101, 0, '<leader>]', ":EXTagsCWord<CR>", 'Tag select current word.' )
 " DISABLE: nnoremap <unique> <leader>] :exec 'ts ' . expand('<cword>')<CR>
 
 " ex-symbol
 " ---------------------------------------------------
-Plugin 'exvim/ex-symbol'
+Plug 'exvim/ex-symbol'
 
-call exsymbol#register_hotkey( 100, 0, '<leader>ss', ":EXSymbolList<CR>", 'List all symbols.' )
-call exsymbol#register_hotkey( 101, 0, '<leader>sq', ":EXSymbolOpen<CR>", 'Open symbols window.' )
-call exsymbol#register_hotkey( 102, 0, '<leader>sg', ":EXSymbolCWord<CR>", 'List symbols contains current word.' )
+" call exsymbol#register_hotkey( 100, 0, '<leader>ss', ":EXSymbolList<CR>", 'List all symbols.' )
+" call exsymbol#register_hotkey( 101, 0, '<leader>sq', ":EXSymbolOpen<CR>", 'Open symbols window.' )
+" call exsymbol#register_hotkey( 102, 0, '<leader>sg', ":EXSymbolCWord<CR>", 'List symbols contains current word.' )
 
 if has('gui_running')
     if has ('mac')
@@ -80,26 +71,26 @@ let g:ex_symbol_select_cmd = 'TS'
 
 " ex-cscope
 " ---------------------------------------------------
-Plugin 'exvim/ex-cscope'
+Plug 'exvim/ex-cscope'
 
-call excscope#register_hotkey( 100, 0, '<leader>cd', ":EXCSToggle<CR>", 'Toggle cscope window.' )
+" call excscope#register_hotkey( 100, 0, '<leader>cd', ":EXCSToggle<CR>", 'Toggle cscope window.' )
 
 " ex-qfix
 " ---------------------------------------------------
-Plugin 'exvim/ex-qfix'
+Plug 'exvim/ex-qfix'
 
-call exqfix#register_hotkey( 100, 0, '<leader>qf', ":EXQFixToggle<CR>", 'Toggle quickfix window.' )
-call exqfix#register_hotkey( 101, 0, '<leader>qq', ":EXQFixPaste<CR>", 'Open quickfix window and paste error list from register *.' )
+" call exqfix#register_hotkey( 100, 0, '<leader>qf', ":EXQFixToggle<CR>", 'Toggle quickfix window.' )
+" call exqfix#register_hotkey( 101, 0, '<leader>qq', ":EXQFixPaste<CR>", 'Open quickfix window and paste error list from register *.' )
 
 " ex-hierarchy
 " ---------------------------------------------------
-Plugin 'exvim/ex-hierarchy'
+Plug 'exvim/ex-hierarchy'
 
 nnoremap <unique> <leader>hv :EXHierarchyCWord<CR>
 
 " majutsushi/tagbar
 " ---------------------------------------------------
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 nnoremap <unique> <silent> <F4> :TagbarToggle<CR>
 
@@ -164,28 +155,28 @@ let g:tagbar_type_cpp = {
 
 " matchit.zip: invoke by %
 " ---------------------------------------------------
-Plugin 'vim-scripts/matchit.zip'
+Plug 'vim-scripts/matchit.zip'
 
 " SearchComplete: invoke by /
 " ---------------------------------------------------
-Plugin 'vim-scripts/SearchComplete'
+Plug 'vim-scripts/SearchComplete'
 
 " dracula/vim
 " ---------------------------------------------------
-Plugin 'dracula/vim', { 'as': 'dracula' }
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " cctree
 " ---------------------------------------------------
-Plugin 'hari-rangarajan/CCTree'
+Plug 'hari-rangarajan/CCTree'
 
 " auto-close
 " ---------------------------------------------------
-Plugin 'spf13/vim-autoclose'
+Plug 'spf13/vim-autoclose'
 let g:autoclose_vim_commentmode = 1
 
 " vim-airline-themes
 " ---------------------------------------------------
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='dracula'
 
 " DISABLE: vim-airline makes Vim editing slow when there are too many buffers opened
@@ -194,7 +185,7 @@ let g:airline_theme='dracula'
 
 " vim-airline
 " ---------------------------------------------------
-Plugin 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 
 if has('gui_running')
     let g:airline_powerline_fonts = 1
@@ -244,31 +235,22 @@ let g:airline_section_c = '%t'
 " ctrlp: invoke by <ctrl-p>
 " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 " ---------------------------------------------------
-" Plugin 'kien/ctrlp.vim'
+" Plug 'kien/ctrlp.vim'
 " let g:ctrlp_working_path_mode = ''
 " let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
 " let g:ctrlp_follow_symlinks = 2
 " let g:ctrlp_max_files = 0 " Unset cap of 10,000 files so we find everything
 " nnoremap <unique> <leader>bs :CtrlPBuffer<CR>
 
-" vim-fugitive: invoke most by :Gdiff
-" git tools
-" ---------------------------------------------------
-" Plugin 'tpope/vim-fugitive'
-
 " vim-surround: invoke when you select words and press 's'
 " ---------------------------------------------------
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 xmap s <Plug>VSurround
 
-" DISABLE
-" " Plugin 'tpope/vim-dispatch'
-" " ---------------------------------------------------
-
 " nerdtree: invoke by :NERDTreeToggle
 " ---------------------------------------------------
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 let g:NERDTreeWinSize = 30
 let g:NERDTreeMouseMode = 1
@@ -283,7 +265,7 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 
 " nerdcommenter: invoke by <leader>c<space>, <leader>cl, <leader>cu, <F11> or <C-F11>
 " ---------------------------------------------------
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
 let g:NERDSpaceDelims = 1
 let g:NERDRemoveExtraSpaces = 1
@@ -296,7 +278,7 @@ let g:NERDCustomDelimiters = {
 
 " syntastic: invoke when you save file and have syntac-checker
 " ---------------------------------------------------
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
@@ -311,27 +293,24 @@ let g:syntastic_python_pylint3_args = '--rcfile=/home/liyunkai/.pylintrc'
 " let g:syntastic_python_checkers = ['autopep8', 'pylint']
 let g:syntastic_python_checkers = ['autopep8']
 
-
 " vim-pydocstring
 " ---------------------------------------------------
-Plugin 'heavenshell/vim-pydocstring'
+Plug 'heavenshell/vim-pydocstring'
 
 nmap <silent> <C-_> <Plug>(pydocstring)
 
-
 " vim-header
 " ---------------------------------------------------
-Plugin 'alpertuna/vim-header'
+Plug 'alpertuna/vim-header'
 
 let g:header_field_author = 'Yunkai Li'
 let g:header_field_author_email = 'ykli@aibee.cn'
 let g:header_auto_add_header = 0
 map <F2> :AddHeader<CR>
 
-
 " YouCompleteMe
 " ---------------------------------------------------
-Plugin 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 
 let g:acp_enableAtStartup = 1
 
@@ -397,25 +376,14 @@ endif
 " especially when splits are used.
 " set completeopt-=preview
 
-Plugin 'numirias/semshi'
+Plug 'numirias/semshi'
 " ---------------------------------------------------
  let g:deoplete#auto_complete_delay = 100
  let g:semshi#mark_selected_nodes = 2
 
-
-" TODO: choose a snippet plugin
-" Plugin 'Shougo/neosnippet.vim'
-" " ---------------------------------------------------
-
-" Plugin 'msanders/snipmate.vim'
-" " ---------------------------------------------------
-
-" Plugin 'spf13/snipmate-snippets'
-" " ---------------------------------------------------
-
 " undotree: invoke by <Leader>u
 " ---------------------------------------------------
-Plugin 'mbbill/undotree'
+Plug 'mbbill/undotree'
 
 nnoremap <leader>u :UndotreeToggle<CR>
 let g:undotree_SetFocusWhenToggle=1
@@ -437,7 +405,7 @@ endfunction
 
 " tabular: invoke by <leader>= alignment-character
 " ---------------------------------------------------
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 
 nnoremap <silent> <leader>= :call g:Tabular(1)<CR>
 xnoremap <silent> <leader>= :call g:Tabular(0)<CR>
@@ -468,10 +436,9 @@ vmap <Leader>a,, :Tabularize /,\zs<CR>
 nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 
-
 " vim-easymotion: invoke by <leader><leader> w,b,e,ge,f,F,h,i,j,k,/
 " ---------------------------------------------------
-Plugin 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 
 map <leader><leader>/ <Plug>(easymotion-sn)
 omap <leader><leader>/ <Plug>(easymotion-tn)
@@ -483,22 +450,16 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 
 " LargeFile
 " ---------------------------------------------------
-Plugin 'vim-scripts/LargeFile'
+Plug 'vim-scripts/LargeFile'
 let g:LargeFile= 5 " files >= 5MB will use LargeFile rules
 
 "}}}
-
-" DISABLE: I'm using GistBox https://app.gistboxapp.com/ instead
-" " gist-vim: Invoke by :Gist
-" ---------------------------------------------------
-" Plugin 'mattn/webapi-vim'
-" Plugin 'mattn/gist-vim'
 
 " c-lang {{{
 
 " ex-cref: invoke by <leader>cr
 " ---------------------------------------------------
-Plugin 'exvim/ex-cref'
+Plug 'exvim/ex-cref'
 
 " this is modified for default c syntax highlight settings
 " make it don't highlight error pattern
@@ -506,31 +467,6 @@ let c_gnu = 1
 let c_no_curly_error = 1
 let c_no_bracket_error = 1
 
-"}}}
-
-" web {{{
-
-Plugin 'ntpeters/vim-better-whitespace'
-nnoremap <unique> <leader>w :StripWhitespace<CR>
-
-" ex-typescript
-" ---------------------------------------------------
-Plugin 'exvim/ex-typescript'
-
-" emmet-vim
-" ---------------------------------------------------
-" Plugin 'mattn/emmet-vim'
-
-" " make sure emmet only enable in html,css files
-" let g:user_emmet_install_global = 0
-" autocmd FileType html,css EmmetInstall
-
-"}}}
-
-" TEST {{{
-" " test-loading
-" echomsg "test-loading: .vimrc"
-" Plugin 'exvim/test-loading'
 "}}}
 
 " vim:ts=4:sw=4:sts=4 et fdm=marker:

@@ -10,17 +10,6 @@ endfunction
 function! LINUX()
     return has('unix') && !has('macunix') && !has('win32unix')
 endfunction
-function! WINDOWS()
-    return  (has('win16') || has('win32') || has('win64'))
-endfunction
-
-" On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
-" across (heterogeneous) systems easier.
-if !exists('g:exvim_custom_path')
-    if WINDOWS()
-        set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-    endif
-endif
 
 "/////////////////////////////////////////////////////////////////////////////
 " language and encoding setup
@@ -31,9 +20,7 @@ endif
 set langmenu=none
 
 " use English for anaything in vim-editor.
-if WINDOWS()
-    silent exec 'language english'
-elseif OSX()
+if OSX()
     silent exec 'language en_US'
 else
     let s:uname = system("uname -s")
@@ -46,66 +33,52 @@ else
     endif
 endif
 
-" try to set encoding to utf-8
-if WINDOWS()
-    " Be nice and check for multi_byte even if the config requires
-    " multi_byte support most of the time
-    if has('multi_byte')
-        " Windows cmd.exe still uses cp850. If Windows ever moved to
-        " Powershell as the primary terminal, this would be utf-8
-        set termencoding=cp850
-        " Let Vim use utf-8 internally, because many scripts require this
-        set encoding=utf-8
-        setglobal fileencoding=utf-8
-        " Windows has traditionally used cp1252, so it's probably wise to
-        " fallback into cp1252 instead of eg. iso-8859-15.
-        " Newer Windows files might contain utf-8 or utf-16 LE so we might
-        " want to try them first.
-        set fileencodings=ucs-bom,utf-8,utf-16le,cp1252,iso-8859-15
-    endif
-
-else
-    " set default encoding to utf-8
-    set encoding=utf-8
-    set termencoding=utf-8
-endif
+" set default encoding to utf-8
+set encoding=utf-8
+set termencoding=utf-8
 scriptencoding utf-8
 
 "/////////////////////////////////////////////////////////////////////////////
 " Bundle steup
 "/////////////////////////////////////////////////////////////////////////////
 
-" vundle#begin
-filetype off " required
+" plug#begin
 
-" set the runtime path to include Vundle
+" set the runtime path to include vim-plug
 if exists('g:exvim_custom_path')
     let g:ex_tools_path = g:exvim_custom_path.'/vimfiles/tools/'
-    exec 'set rtp+=' . fnameescape ( g:exvim_custom_path.'/vimfiles/bundle/Vundle.vim/' )
-    call vundle#rc(g:exvim_custom_path.'/vimfiles/bundle/')
+    let g:plug_vim_path = g:exvim_custom_path.'/vimfiles/bundle/vim-plug/plug.vim'
+    exec 'source ' . fnameescape(g:plug_vim_path) 
+    call plug#begin( g:exvim_custom_path.'/vimfiles/bundle/' )
 else
     let g:ex_tools_path = '~/.vim/tools/'
-    set rtp+=~/.vim/bundle/Vundle.vim/
-    call vundle#rc('~/.vim/bundle/')
+    let g:plug_vim_path = '~/.vim/autoload/vim-plug/plug.vim'
+    exec 'source ' . fnameescape(g:plug_vim_path) 
+    call plug#begin('~/.vim/bundle/')
 endif
 
 " load .vimrc.plugins & .vimrc.plugins.local
 if exists('g:exvim_custom_path')
     let vimrc_plugins_path = g:exvim_custom_path.'/.vimrc.plugins'
-    let vimrc_plugins_local_path = g:exvim_custom_path.'/.vimrc.plugins.local'
 else
     let vimrc_plugins_path = '~/.vimrc.plugins'
-    let vimrc_plugins_local_path = '~/.vimrc.plugins.local'
 endif
 if filereadable(expand(vimrc_plugins_path))
     exec 'source ' . fnameescape(vimrc_plugins_path)
 endif
-if filereadable(expand(vimrc_plugins_local_path))
-    exec 'source ' . fnameescape(vimrc_plugins_local_path)
-endif
 
-" vundle#end
-filetype plugin indent on " required
+let g:init_func_list = []
+function! PluginLoadFinished() abort "{{{
+    for Fn in g:init_func_list
+        call Fn()
+    endfor
+endfunction "}}}
+call PluginLoadFinished()
+
+" Initialize plugin system
+call plug#end()
+
+" plug#end
 syntax on " required
 
 "/////////////////////////////////////////////////////////////////////////////
@@ -229,16 +202,6 @@ if has('gui_running')
             elseif getfontname( 'DejaVu Sans Mono' ) != ''
                 set guifont=DejaVu\ Sans\ Mono:h15
             endif
-        elseif WINDOWS()
-            if getfontname( 'DejaVu Sans Mono for Powerline' ) != ''
-                set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11:cANSI
-            elseif getfontname( 'DejaVu Sans Mono' ) != ''
-                set guifont=DejaVu\ Sans\ Mono:h11:cANSI
-            elseif getfontname( 'Consolas' ) != ''
-                set guifont=Consolas:h11:cANSI " this is the default visual studio font
-            else
-                set guifont=Lucida_Console:h11:cANSI
-            endif
         endif
     endfunction
 endif
@@ -267,13 +230,6 @@ if has('gui_running')
     if exists('+columns')
         set columns=130
     endif
-
-    " DISABLE
-    " if WINDOWS()
-    "     au GUIEnter * simalt ~x " Maximize window when enter vim
-    " else
-    "     " TODO: no way right now
-    " endif
 endif
 
 set showfulltag " show tag with function protype.
