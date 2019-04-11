@@ -17,15 +17,14 @@ fi
 cd ./bundle/
 
 # download or update vundle in ./vimfiles/bundle/
-if [ ! -d "./Vundle.vim/" ]; then
-    # TODO: please check if the vundle is latest version
-    git clone https://github.com/gmarik/Vundle.vim Vundle.vim
+if [ ! -d "./vim-plug/" ]; then
+    git clone https://github.com/junegunn/vim-plug vim-plug 
 fi
 
 # download and install bundles through Vundle in this repository
 echo "Update vim-plugins."
 cd ${ORIGINAL_PATH}
-vim -u .vimrc.mini --cmd "set rtp=./vimfiles,\$VIMRUNTIME,./vimfiles/after" +PluginClean +PluginUpdate +qall
+vim -u .vimrc.mini --cmd "set rtp=./vimfiles,\$VIMRUNTIME,./vimfiles/after" +PlugInstall +PlugClean +PlugUpdate +qall
 
 # TODO
 # install powerline-fonts on MacOSX

@@ -7,8 +7,8 @@
 " man.vim: invoked by :Man {name}
 source $VIMRUNTIME/ftplugin/man.vim
 
-
 " general plugins {{{
+Plug 'junegunn/vim-plug'
 
 " exvim project
 
@@ -95,7 +95,7 @@ Plug 'majutsushi/tagbar'
 nnoremap <unique> <silent> <F4> :TagbarToggle<CR>
 
 " if ctags bin exist"
-" let g:tagbar_ctags_bin = ''
+let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 
 let g:tagbar_sort = 1
 let g:tagbar_map_preview = '<CR>'
@@ -111,17 +111,6 @@ let g:tagbar_iconchars = ['+', '-']
 let g:tagbar_compact = 1
 
 " use command ':TagbarGetTypeConfig lang' change your settings
-let g:tagbar_type_javascript = {
-    \ 'ctagsbin': 'ctags',
-    \ 'kinds' : [
-        \ 'v:global variables:0:0',
-        \ 'c:classes',
-        \ 'p:properties:0:0',
-        \ 'm:methods',
-        \ 'f:functions',
-        \ 'r:object',
-    \ ],
-\ }
 let g:tagbar_type_c = {
     \ 'kinds' : [
         \ 'd:macros:0:0',
@@ -174,11 +163,6 @@ Plug 'hari-rangarajan/CCTree'
 Plug 'spf13/vim-autoclose'
 let g:autoclose_vim_commentmode = 1
 
-" vim-airline-themes
-" ---------------------------------------------------
-Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='dracula'
-
 " DISABLE: vim-airline makes Vim editing slow when there are too many buffers opened
 "          if you don't mind, and love this plugin, uncomment the script below
 "          to enable it
@@ -220,7 +204,6 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
-
 let g:airline_inactive_collapse=1
 let g:airline#extensions#tabline#enabled = 1 " NOTE: When you open lots of buffers and typing text, it is so slow.
 let g:airline#extensions#tabline#show_buffers = 1
@@ -228,9 +211,14 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_section_a = airline#section#create(['mode'])
+" let g:airline_section_a = airline#section#create(['mode'])
 let g:airline_section_b = "%{fnamemodify(bufname('%'),':p:.:h').'/'}"
 let g:airline_section_c = '%t'
+
+" vim-airline-themes
+" ---------------------------------------------------
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='dracula'
 
 " ctrlp: invoke by <ctrl-p>
 " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
@@ -376,10 +364,10 @@ endif
 " especially when splits are used.
 " set completeopt-=preview
 
-Plug 'numirias/semshi'
+" Plug 'numirias/semshi'
 " ---------------------------------------------------
- let g:deoplete#auto_complete_delay = 100
- let g:semshi#mark_selected_nodes = 2
+ " let g:deoplete#auto_complete_delay = 100
+ " let g:semshi#mark_selected_nodes = 2
 
 " undotree: invoke by <Leader>u
 " ---------------------------------------------------

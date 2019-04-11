@@ -42,12 +42,14 @@ scriptencoding utf-8
 " Bundle steup
 "/////////////////////////////////////////////////////////////////////////////
 
-" plug#begin
+filetype off
 
+" plug#begin
 " set the runtime path to include vim-plug
 if exists('g:exvim_custom_path')
     let g:ex_tools_path = g:exvim_custom_path.'/vimfiles/tools/'
     let g:plug_vim_path = g:exvim_custom_path.'/vimfiles/bundle/vim-plug/plug.vim'
+    exec 'set rtp+=' . fnameescape ( g:exvim_custom_path.'/vimfiles/bundle/vim-plug' )
     exec 'source ' . fnameescape(g:plug_vim_path) 
     call plug#begin( g:exvim_custom_path.'/vimfiles/bundle/' )
 else
@@ -67,18 +69,11 @@ if filereadable(expand(vimrc_plugins_path))
     exec 'source ' . fnameescape(vimrc_plugins_path)
 endif
 
-let g:init_func_list = []
-function! PluginLoadFinished() abort "{{{
-    for Fn in g:init_func_list
-        call Fn()
-    endfor
-endfunction "}}}
-call PluginLoadFinished()
-
 " Initialize plugin system
 call plug#end()
 
 " plug#end
+filetype plugin indent on
 syntax on " required
 
 "/////////////////////////////////////////////////////////////////////////////
