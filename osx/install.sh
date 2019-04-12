@@ -18,7 +18,7 @@ cd ./bundle/
 
 # download or update vundle in ./vimfiles/bundle/
 if [ ! -d "./vim-plug/" ]; then
-    git clone https://github.com/junegunn/vim-plug vim-plug 
+    git clone https://github.com/junegunn/vim-plug 
 fi
 
 # download and install bundles through Vundle in this repository
