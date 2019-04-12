@@ -95,7 +95,7 @@ Plug 'majutsushi/tagbar'
 nnoremap <unique> <silent> <F4> :TagbarToggle<CR>
 
 " if ctags bin exist"
-let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+let g:tagbar_ctags_bin = '/usr/bin/ctags'
 
 let g:tagbar_sort = 1
 let g:tagbar_map_preview = '<CR>'

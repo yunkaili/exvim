@@ -2,7 +2,7 @@
 
 export ORIGINAL_PATH=`pwd`
 
-echo "Check and install Vundle."
+echo "Check and install vim-plug."
 
 # if we don't have folder vimfiles, create it.
 if [ ! -d "./vimfiles/" ]; then
