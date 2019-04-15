@@ -50,12 +50,12 @@ if exists('g:exvim_custom_path')
     let g:ex_tools_path = g:exvim_custom_path.'/vimfiles/tools/'
     let g:plug_vim_path = g:exvim_custom_path.'/vimfiles/bundle/vim-plug/plug.vim'
     exec 'set rtp+=' . fnameescape ( g:exvim_custom_path.'/vimfiles/bundle/vim-plug' )
-    exec 'source ' . fnameescape(g:plug_vim_path) 
+    exec 'source ' . fnameescape(g:plug_vim_path)
     call plug#begin( g:exvim_custom_path.'/vimfiles/bundle/' )
 else
     let g:ex_tools_path = '~/.vim/tools/'
     let g:plug_vim_path = '~/.vim/autoload/vim-plug/plug.vim'
-    exec 'source ' . fnameescape(g:plug_vim_path) 
+    exec 'source ' . fnameescape(g:plug_vim_path)
     call plug#begin('~/.vim/bundle/')
 endif
 
@@ -210,7 +210,7 @@ set ruler " show the cursor position all the time
 set hidden " allow to change buffer without saving
 set shortmess=aoOtTI " shortens messages to avoid 'press a key' prompt
 set lazyredraw " do not redraw while executing macros (much faster)
-set display+=lastline " for easy browse last line with wrap text
+" set display+=lastline " for easy browse last line with wrap text
 set laststatus=2 " always have status-line
 set titlestring=%t\ (%{expand(\"%:p:.:h\")}/)
 
@@ -232,7 +232,6 @@ set guioptions+=b " present the bottom scrollbar when the longest visible line e
 set guioptions-=m
 set guioptions-=T
 
-" spf13
 set cursorline                  " Highlight current line
 " highlight clear SignColumn      " SignColumn should match background
 highlight clear LineNr          " Current line number row will have same background color in relative mode
@@ -249,7 +248,11 @@ set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set scrolljump=5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
 set foldenable                  " Auto fold code
-" set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+
+" hightlight trailing space
+highlight ws ctermbg=red guibg=red
+match ws /\s\+$/
 
 " ------------------------------------------------------------------
 " Desc: Text edit
@@ -281,6 +284,7 @@ endfunction
 
 set cindent shiftwidth=2 " set cindent on to autoinent when editing c/c++ file, with 2 shift width
 set expandtab " set expandtab on, the tab will be change to space automaticaly
+set shiftwidth=2
 set tabstop=2 " set tabstop to 2 characters
 set softtabstop=2
 set ve=block " in visual block mode, cursor can be positioned where there is no actual character
@@ -492,18 +496,14 @@ endif
 " even be separated by punctuation (such as "abc = def").
 nnoremap <silent> <leader>sw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<cr><c-o>
 
-"/////////////////////////////////////////////////////////////////////////////
-" local setup
-"/////////////////////////////////////////////////////////////////////////////
+" remove trailing white space
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+noremap <Leader>w :call TrimWhitespace()<CR>
 
-let vimrc_local_path = '~/.vimrc.local'
-if exists('g:exvim_custom_path')
-    let vimrc_local_path = g:exvim_custom_path.'/.vimrc.local'
-endif
-
-if filereadable(expand(vimrc_local_path))
-    exec 'source ' . fnameescape(vimrc_local_path)
-endif
 
 set colorcolumn=+1
 
