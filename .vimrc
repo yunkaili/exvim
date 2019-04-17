@@ -301,7 +301,7 @@ set nf=
 " set foldmethod=marker foldmarker={,} foldlevel=0
 
 " Python
-set foldmethod=indent foldlevel=0
+set foldmethod=indent foldlevel=99999
 set diffopt=filler,context:9999
 
 " ------------------------------------------------------------------
