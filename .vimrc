@@ -356,7 +356,7 @@ if has('autocmd')
         " Desc: file types
         " ------------------------------------------------------------------
 
-        au FileType text setlocal textwidth=78 " for all text files set 'textwidth' to 78 characters.
+        au FileType text setlocal textwidth=80 " for all text files set 'textwidth' to 80 characters.
         au FileType c,cpp,cs,swig set nomodeline " this will avoid bug in my project with namespace ex, the vim will tree ex:: as modeline.
 
         " disable auto-comment for c/cpp, lua, javascript, c# and vim-script
@@ -505,6 +505,6 @@ endfun
 noremap <Leader>w :call TrimWhitespace()<CR>
 
 
-set colorcolumn=+1
+set colorcolumn=+5
 
 " vim:ts=2:sw=2:sts=2 et fdm=marker:
