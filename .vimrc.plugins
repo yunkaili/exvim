@@ -1,8 +1,8 @@
 " File              : .vimrc.plugins
-" Author            : Yunkai Li <ykli@aibee.cn>
+" Author            : Yunkai Li <liyunkai@kuaishou.com>
 " Date              : 29.03.2019
-" Last Modified Date: 12.04.2019
-" Last Modified By  : Yunkai Li <ykli@aibee.cn>
+" Last Modified Date: 30.09.2019
+" Last Modified By  : Yunkai Li <liyunkai@kuaishou.com>
 
 " man.vim: invoked by :Man {name}
 source $VIMRUNTIME/ftplugin/man.vim
@@ -250,16 +250,37 @@ xmap s <Plug>VSurround
 " ---------------------------------------------------
 Plug 'scrooloose/nerdtree'
 
-let g:NERDTreeWinSize = 30
+let g:NERDTreeChDirMode=0
+let g:NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+let g:NERDTreeKeepTreeInNewTab=1
 let g:NERDTreeMouseMode = 1
 let g:NERDTreeMapToggleZoom = '<Space>'
+let g:NERDTreeQuitOnOpen=0
 let g:NERDTreeShowBookmarks=1
-let g:NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
-let g:NERDTreeChDirMode=0
-let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeShowHidden=1
-let g:NERDTreeKeepTreeInNewTab=1
+let g:NERDTreeWinSize = 30
 let g:nerdtree_tabs_open_on_gui_startup=0
+map <leader>n :NERDTreeToggle<CR>
+
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+ exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
 " nerdcommenter: invoke by <leader>c<space>, <leader>cl, <leader>cu, <F11> or <C-F11>
 " ---------------------------------------------------
@@ -318,7 +339,7 @@ let g:UltiSnipsEditSplit="vertical"
 Plug 'alpertuna/vim-header'
 
 let g:header_field_author = 'Yunkai Li'
-let g:header_field_author_email = 'ykli@aibee.cn'
+let g:header_field_author_email = 'liyunkai@kuaishou.com'
 let g:header_auto_add_header = 0
 map <F2> :AddHeader<CR>
 
@@ -337,31 +358,11 @@ let g:ycm_complete_in_comments=1
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_python_binary_path = 'python3'
-let g:ycm_global_ycm_extra_conf = '/home/ykli/.exvim/ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.exvim/ycm_extra_conf.py'
 
 " Ways to compuile YouCompleteMe
-" 1. Download LLVM and CLANG (v3.9 and higher)  [url]http://llvm.org/releases/download.html
-" download both llvm source code and clang source code
-
-" 2. Download and install Vim (v7.4.143 or higher and compile with Python(done with configure)) [url]https://github.com/vim/vim.git
-" ./configure --enable-pythoninterp  --with-python-config-dir=/home/liyunkai/local/anaconda2/lib/python2.7/config --prefix=/to/your/path
-
-" 3. Download and install Cmake (v3.7 or higher) [url]https://cmake.org/files/v3.7/cmake-3.7.0.tar.gz
-" if (CMake Error: Could not find CMAKE_ROOT) happens
-" add
-" export CMAKE_ROOT=$HOME/local/share/cmake-3.7
-" in .bashrc or .zshrc
-
-" Compile LLVM and CLANG and put them in to a same file
-
-" Run Commands below
-" cd ~
-" mkdir ycm_build
-" cd ycm_build
-" cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=/home/liyunkai/local/llvm+clang/ -DEXTERNAL_LIBCLANG_PATH=/home/liyunkai/local/llvm+clang/lib/libclang.so . ~/.exvim/vimfiles/bundle/YouCompleteMe/third_party/ycmd/cpp
-" cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=/home/liyunkai/local/ -DEXTERNAL_LIBCLANG_PATH=/home/liyunkai/local/lib/libclang.so -DPYTHON_LIBRARY=$(python-config --prefix)/lib/libpython2.7.so -DPYTHON_INCLUDE_DIR=$(python-config --prefix)/include/python2.7 . ~/.exvim/vimfiles/bundle/YouCompleteMe/third_party/ycmd/cpp
-" cmake --build . --target ycm_core --config Release
-
+" modify install.py header to  #!/usr/bin/env python3
+" python3 install.py --clang-completer
 " MODIFY files in /home/liyunkai/.exvim/vimfiles/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py
 
 " remap Ultisnips for compatibility for YCM
