@@ -1,8 +1,8 @@
 " File              : .vimrc.plugins
-" Author            : Yunkai Li <liyunkai@kuaishou.com>
+" Author            : Yunkai Li <yunkai.li@hotmail.com>
 " Date              : 29.03.2019
-" Last Modified Date: 30.09.2019
-" Last Modified By  : Yunkai Li <liyunkai@kuaishou.com>
+" Last Modified Date: 06.10.2019
+" Last Modified By  : Yunkai Li <yunkai.li@hotmail.com>
 
 " man.vim: invoked by :Man {name}
 source $VIMRUNTIME/ftplugin/man.vim
@@ -339,7 +339,7 @@ let g:UltiSnipsEditSplit="vertical"
 Plug 'alpertuna/vim-header'
 
 let g:header_field_author = 'Yunkai Li'
-let g:header_field_author_email = 'liyunkai@kuaishou.com'
+let g:header_field_author_email = 'yunkai.li@hotmail.com'
 let g:header_auto_add_header = 0
 map <F2> :AddHeader<CR>
 
