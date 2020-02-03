@@ -89,7 +89,7 @@ else
 endif
 
 if exists('$TMUX')
-    set term=screen-256color
+    set term=xterm-256color
 endif
 
 " Allow to trigger background
@@ -97,7 +97,7 @@ function! ToggleBG()
     let s:tbg = &background
     " Inversion
     if s:tbg == "dark"
-        set background=light
+        set background=dark
     else
         set background=dark
     endif
@@ -105,6 +105,8 @@ endfunction
 noremap <leader>bg :call ToggleBG()<CR>
 
 colorscheme dracula
+" add to fit when using with jupyterlab"
+set termguicolors
 
 "/////////////////////////////////////////////////////////////////////////////
 " General
@@ -237,9 +239,12 @@ set cursorline                  " Highlight current line
 highlight clear LineNr          " Current line number row will have same background color in relative mode
 
 set cursorcolumn                " Highlight current colum
-highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
-highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
+" highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
+" highlight CursorColumn ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
+" highlight Pmenu ctermfg=15 ctermbg=0 guifg=None guibg=None
 highlight Search ctermbg=Yellow ctermfg=Red
+set colorcolumn=130
+highlight ColorColumn ctermbg=green guibg=orange
 
 set linespace=0                 " No extra spaces between rows
 set winminheight=0              " Windows can be 0 line high
@@ -503,8 +508,4 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 noremap <Leader>w :call TrimWhitespace()<CR>
-
-
-set colorcolumn=+5
-
 " vim:ts=2:sw=2:sts=2 et fdm=marker:

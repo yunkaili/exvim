@@ -3,7 +3,7 @@
 # create tags
 echo "Creating Tags..."
 
-if [ ${CUSTOM} = true ]; then
+if [ ${CUSTOM} ]; then
     echo "  |- move custom ctags to ${TARGET}"
     cp "${SOURCE}" "${TARGET}"
 else
@@ -16,7 +16,7 @@ else
 
     # process tags by langugage
     echo "  |- generate ${TMP}"
-    ${CTAGS_CMD} -o "${TMP}" ${OPTIONS} "${FILES}"
+    ${CTAGS_CMD} -o "${TMP}" ${OPTIONS} --languages=python --python-kinds=-vi "${FILES}"
 
     # replace old file
     if [ -f "${TMP}" ]; then
