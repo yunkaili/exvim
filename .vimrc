@@ -214,6 +214,9 @@ set shortmess=aoOtTI " shortens messages to avoid 'press a key' prompt
 set lazyredraw " do not redraw while executing macros (much faster)
 " set display+=lastline " for easy browse last line with wrap text
 set laststatus=2 " always have status-line
+set noshowmode " plugin lightline
+set showtabline=2 " plugin lightline
+
 set titlestring=%t\ (%{expand(\"%:p:.:h\")}/)
 
 " set window size (if it's GUI)
@@ -293,8 +296,6 @@ set shiftwidth=4
 set tabstop=2 " set tabstop to 2 characters
 set softtabstop=4
 set ve=block " in visual block mode, cursor can be positioned where there is no actual character
-set showtabline=2
-set noshowmode
 
 " set Number format to null(default is octal) , when press CTRL-A on number
 " like 007, it would not become 010

@@ -105,7 +105,7 @@ Plug 'majutsushi/tagbar'
 nnoremap <unique> <silent> <F4> :TagbarToggle<CR>
 
 " if ctags bin exist"
-let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+let g:tagbar_ctags_bin = '/usr/bin/ctags'
 
 let g:tagbar_sort = 1
 let g:tagbar_map_preview = '<CR>'
@@ -180,12 +180,16 @@ Plug 'itchyny/lightline.vim'
 let g:lightline = {
       \ 'colorscheme': 'dracula',
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \   'left': [
+      \             [ 'mode', 'paste' ],
+      \             [ 'path' ],
+      \             [ 'readonly', 'modified' ] ]
       \ },
       \ 'component': {
-      \   'charvaluehex': '0x%B',
+      \   'path': '%F',
       \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' },
       \ }
 
 " tabline plugin for lightline
