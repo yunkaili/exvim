@@ -398,38 +398,16 @@ function g:Undotree_CustomMap()
     endif
 endfunction
 
-" tabular: invoke by <leader>= alignment-character
+" vim-easy-align: invoke by gaip
 " ---------------------------------------------------
-Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-easy-align'
 
-nnoremap <silent> <leader>= :call g:Tabular(1)<CR>
-xnoremap <silent> <leader>= :call g:Tabular(0)<CR>
-function! g:Tabular(ignore_range) range
-    let c = getchar()
-    let c = nr2char(c)
-    if a:ignore_range == 0
-        exec printf('%d,%dTabularize /%s', a:firstline, a:lastline, c)
-    else
-        exec printf('Tabularize /%s', c)
-    endif
-endfunction
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
 
-nmap <Leader>a& :Tabularize /&<CR>
-vmap <Leader>a& :Tabularize /&<CR>
-nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-nmap <Leader>a=> :Tabularize /=><CR>
-vmap <Leader>a=> :Tabularize /=><CR>
-nmap <Leader>a: :Tabularize /:<CR>
-vmap <Leader>a: :Tabularize /:<CR>
-nmap <Leader>a:: :Tabularize /:\zs<CR>
-vmap <Leader>a:: :Tabularize /:\zs<CR>
-nmap <Leader>a, :Tabularize /,<CR>
-vmap <Leader>a, :Tabularize /,<CR>
-nmap <Leader>a,, :Tabularize /,\zs<CR>
-vmap <Leader>a,, :Tabularize /,\zs<CR>
-nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
 
 " vim-easymotion: invoke by <leader><leader> w,b,e,ge,f,F,h,i,j,k,/
 " ---------------------------------------------------
