@@ -1,7 +1,7 @@
 " File              : .vimrc.plugins
 " Author            : Yunkai Li <yunkai.li@hotmail.com>
 " Date              : 29.03.2019
-" Last Modified Date: 08.05.2020
+" Last Modified Date: 11.05.2020
 " Last Modified By  : Yunkai Li <yunkai.li@hotmail.com>
 
 " man.vim: invoked by :Man {name}
@@ -18,7 +18,7 @@ let g:mapleader = "\<Space>"
 " let g:maplocalleader = ','
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 " nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
-set timeoutlen=200
+set timeoutlen=0
 
 " exvim project
 
