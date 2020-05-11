@@ -15,10 +15,9 @@ Plug 'junegunn/vim-plug'
 " ---------------------------------------------------
 Plug 'liuchengxu/vim-which-key'
 let g:mapleader = "\<Space>"
-" let g:maplocalleader = ','
-nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
-" nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
-set timeoutlen=0
+nnoremap <silent><nowait> <leader> :<c-u>WhichKey '<Space>'<CR>
+vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
+set timeoutlen=10
 
 " exvim project
 
@@ -31,12 +30,12 @@ nnoremap <unique> <leader>ve :call exconfig#edit_cur_vimentry ()<CR>
 " ---------------------------------------------------
 Plug 'exvim/ex-utility'
 
-nnoremap <unique> <silent> <Leader>bd :EXbd<CR>
-nnoremap <unique> <silent> <C-l> :EXbn<CR>
-nnoremap <unique> <silent> <C-h> :EXbp<CR>
-nnoremap <unique> <silent> <C-Tab> :EXbalt<CR>
-nnoremap <unique> <silent> <Leader><Tab> :EXsw<CR>
-nmap <unique> <silent> <Leader><Esc> :EXgp<CR><ESC>
+" nnoremap <unique> <silent> <Leader>bd :EXbd<CR>
+" nnoremap <unique> <silent> <C-l> :EXbn<CR>
+" nnoremap <unique> <silent> <C-h> :EXbp<CR>
+" nnoremap <unique> <silent> <C-Tab> :EXbalt<CR>
+" nnoremap <unique> <silent> <Leader><Tab> :EXsw<CR>
+" nmap <unique> <silent> <Leader><Esc> :EXgp<CR><ESC>
 
 " ex-vimentry
 " ---------------------------------------------------
@@ -227,7 +226,7 @@ let g:NERDTreeChDirMode=0
 let g:NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
 let g:NERDTreeKeepTreeInNewTab=1
 let g:NERDTreeMouseMode = 1
-let g:NERDTreeMapToggleZoom = '<Space>'
+let g:NERDTreeMapToggleZoom = '<F2>'
 let g:NERDTreeQuitOnOpen=0
 let g:NERDTreeShowBookmarks=1
 let g:NERDTreeShowHidden=1
@@ -261,10 +260,14 @@ Plug 'scrooloose/nerdcommenter'
 
 let g:NERDSpaceDelims = 1
 let g:NERDRemoveExtraSpaces = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDToggleCheckAllLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDCustomDelimiters = {
             \ 'vimentry': { 'left': '--' },
             \ }
+
+
 " map <unique> <F11> <Plug>NERDCommenterAlignBoth
 " map <unique> <C-F11> <Plug>NERDCommenterUncomment
 
