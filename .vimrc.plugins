@@ -1,7 +1,7 @@
 " File              : .vimrc.plugins
 " Author            : Yunkai Li <yunkai.li@hotmail.com>
 " Date              : 29.03.2019
-" Last Modified Date: 12.05.2020
+" Last Modified Date: 02.06.2020
 " Last Modified By  : Yunkai Li <yunkai.li@hotmail.com>
 
 " man.vim: invoked by :Man {name}
@@ -428,10 +428,10 @@ endfunction
 Plug 'junegunn/vim-easy-align'
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+xmap <leader>a <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+nmap <leader>a <Plug>(EasyAlign)
 
 
 " vim-easymotion: invoke by <leader><leader> w,b,e,ge,f,F,h,i,j,k,/
