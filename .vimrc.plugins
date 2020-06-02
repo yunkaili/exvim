@@ -1,7 +1,7 @@
 " File              : .vimrc.plugins
 " Author            : Yunkai Li <yunkai.li@hotmail.com>
 " Date              : 29.03.2019
-" Last Modified Date: 12.05.2020
+" Last Modified Date: 25.05.2020
 " Last Modified By  : Yunkai Li <yunkai.li@hotmail.com>
 
 " man.vim: invoked by :Man {name}
@@ -219,7 +219,7 @@ Plug 'tpope/vim-surround'
 
 xmap s <Plug>VSurround
 
-" nerdtree: invoke by :NERDTreeToggle
+" nerdtree: invoke by <leader>n:NERDTreeToggle
 " ---------------------------------------------------
 Plug 'scrooloose/nerdtree'
 
@@ -235,7 +235,14 @@ let g:NERDTreeWinSize = 30
 let g:nerdtree_tabs_open_on_gui_startup=0
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+let NERDTreeAutoDeleteBuffer = 1
 map <leader>n :NERDTreeToggle<CR>
+nmap <leader>r :NERDTreeFocus<cr>R<c-w><c-p>
+
+" Keep NERDTree windows fixed
+" If more than one window and previous buffer was NERDTree, go back to it.
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+let g:plug_window = 'noautocmd vertical topleft new'
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -269,10 +276,6 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDCustomDelimiters = {
             \ 'vimentry': { 'left': '--' },
             \ }
-
-
-" map <unique> <F11> <Plug>NERDCommenterAlignBoth
-" map <unique> <C-F11> <Plug>NERDCommenterUncomment
 
 
 " A plugin of NERDTree showing git status flags.
@@ -346,7 +349,7 @@ Plug 'alpertuna/vim-header'
 let g:header_field_author = 'Yunkai Li'
 let g:header_field_author_email = 'yunkai.li@hotmail.com'
 let g:header_auto_add_header = 1
-map <F2> :AddHeader<CR>
+" map <F2> :AddHeader<CR>
 
 " YouCompleteMe
 " ---------------------------------------------------
@@ -395,11 +398,6 @@ endif
 " When enabled, there can be too much visual noise
 " especially when splits are used.
 " set completeopt-=preview
-
-" Plug 'numirias/semshi'
-" ---------------------------------------------------
- " let g:deoplete#auto_complete_delay = 100
- " let g:semshi#mark_selected_nodes = 2
 
 " undotree: invoke by <Leader>u
 " ---------------------------------------------------

@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# File              : ycm_extra_conf.py
+# Author            : Yunkai Li <yunkai.li@hotmail.com>
+# Date              : 20.05.2020
+# Last Modified Date: 20.05.2020
+# Last Modified By  : Yunkai Li <yunkai.li@hotmail.com>
 # This file is NOT licensed under the GPLv3, which is the license for the rest
 # of YouCompleteMe.
 #
@@ -142,7 +149,7 @@ def GetStandardLibraryIndexInSysPath( sys_path ):
 
 def PythonSysPath( **kwargs ):
   sys_path = kwargs[ 'sys_path' ]
-  sys_path.insert(1, '/home/ykli/.local/lib/python3.6/site-packages/')
+  sys_path.insert(1, '/usr/local/lib/python3.6/dist-packages/')
 
   dependencies = [ p.join( DIR_OF_THIS_SCRIPT, 'python' ),
                    p.join( DIR_OF_THIRD_PARTY, 'requests-futures' ),
