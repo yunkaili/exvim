@@ -450,9 +450,19 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 Plug 'vim-scripts/LargeFile'
 let g:LargeFile= 5 " files >= 5MB will use LargeFile rules
 
-" Speedup syntax on yaml
+
+" collections of language pack
 " ---------------------------------------------------
-Plug 'stephpy/vim-yaml'
+Plug 'sheerun/vim-polyglot'
+let g:polyglot_enabled = ['python', 'python-indent', 'yaml', 'c/c++', 'c++11', 'cmake', 'csv', 'git' ]
+
+
+" nerdtree syntax highlight
+" ---------------------------------------------------
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" let g:WebDevIconsDisableDefaultFolderSymbolColorFromNERDTreeDir = 1
+" let g:WebDevIconsDisableDefaultFileSymbolColorFromNERDTreeFile = 1
+
 
 "}}}
 
