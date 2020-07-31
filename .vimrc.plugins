@@ -1,7 +1,7 @@
 " File              : .vimrc.plugins
 " Author            : Yunkai Li <yunkai.li@hotmail.com>
 " Date              : 29.03.2019
-" Last Modified Date: 05.07.2020
+" Last Modified Date: 31.07.2020
 " Last Modified By  : Yunkai Li <yunkai.li@hotmail.com>
 
 " man.vim: invoked by :Man {name}
@@ -221,12 +221,12 @@ xmap s <Plug>VSurround
 
 " nerdtree: invoke by <leader>n:NERDTreeToggle
 " ---------------------------------------------------
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 
 let g:NERDTreeChDirMode=0
 let g:NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
 let g:NERDTreeKeepTreeInNewTab=1
-let g:NERDTreeMouseMode = 1
+let g:NERDTreeMouseMode = 0
 let g:NERDTreeMapToggleZoom = '<F2>'
 let g:NERDTreeQuitOnOpen=0
 let g:NERDTreeShowBookmarks=1
@@ -244,25 +244,6 @@ nmap <leader>r :NERDTreeFocus<cr>R<c-w><c-p>
 autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
 let g:plug_window = 'noautocmd vertical topleft new'
 
-" NERDTress File highlighting
-function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
- exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
- exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-endfunction
-
-call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
-call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
-call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
-call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
-call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
 " nerdcommenter: invoke by <leader>c<space>, <leader>cl, <leader>cu, <F11> or <C-F11>
 " ---------------------------------------------------
@@ -368,11 +349,6 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_python_binary_path = 'python3'
 let g:ycm_global_ycm_extra_conf = '~/.exvim/ycm_extra_conf.py'
 
-" Ways to compuile YouCompleteMe
-" modify install.py header to  #!/usr/bin/env python3
-" python3 install.py --clang-completer
-" MODIFY files in /home/liyunkai/.exvim/vimfiles/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py
-
 " remap Ultisnips for compatibility for YCM
 let g:UltiSnipsExpandTrigger = '<C-j>'
 let g:UltiSnipsJumpForwardTrigger = '<C-j>'
@@ -455,13 +431,6 @@ let g:LargeFile= 5 " files >= 5MB will use LargeFile rules
 " ---------------------------------------------------
 Plug 'sheerun/vim-polyglot'
 let g:polyglot_enabled = ['python', 'python-indent', 'yaml', 'c/c++', 'c++11', 'cmake', 'csv', 'git' ]
-
-
-" nerdtree syntax highlight
-" ---------------------------------------------------
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" let g:WebDevIconsDisableDefaultFolderSymbolColorFromNERDTreeDir = 1
-" let g:WebDevIconsDisableDefaultFileSymbolColorFromNERDTreeFile = 1
 
 
 "}}}
