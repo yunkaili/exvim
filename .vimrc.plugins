@@ -1,7 +1,7 @@
 " File              : .vimrc.plugins
 " Author            : Yunkai Li <yunkai.li@hotmail.com>
 " Date              : 17.09.2020
-" Last Modified Date: 17.09.2020
+" Last Modified Date: 25.09.2020
 " Last Modified By  : Yunkai Li <yunkai.li@hotmail.com>
 
 " man.vim: invoked by :Man {name}
@@ -161,10 +161,15 @@ Plug 'vim-scripts/SearchComplete'
 
 " dracula/vim
 " ---------------------------------------------------
-Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'dracula/vim', { 'as': 'dracula' }
 
-" adigitoleo/vim-mellow
-" Plug 'adigitoleo/vim-mellow'
+" arcticicestudio/nord-vim
+" ---------------------------------------------------
+Plug 'arcticicestudio/nord-vim'
+let g:nord_cursor_line_number_background = 1
+let g:nord_bold_vertical_split_line = 1
+let g:nord_uniform_diff_background = 1
+
 
 " cctree
 " ---------------------------------------------------
@@ -180,7 +185,7 @@ let g:autoclose_vim_commentmode = 1
 Plug 'itchyny/lightline.vim'
 
 let g:lightline = {
-      \ 'colorscheme': 'dracula',
+      \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [
       \             [ 'mode', 'paste' ],
