@@ -1,7 +1,7 @@
 " File              : .vimrc
 " Author            : Yunkai Li <yunkai.li@hotmail.com>
 " Date              : 17.09.2020
-" Last Modified Date: 25.09.2020
+" Last Modified Date: 21.10.2020
 " Last Modified By  : Yunkai Li <yunkai.li@hotmail.com>
 "/////////////////////////////////////////////////////////////////////////////
 " basic
@@ -111,9 +111,8 @@ noremap <leader>bg :call ToggleBG()<CR>
 
 " add to fit when using with jupyterlab"
 set termguicolors
-" colorscheme dracula
-" colorscheme mellow
-colorscheme nord
+colorscheme dracula
+" colorscheme nord
 
 "/////////////////////////////////////////////////////////////////////////////
 " General
