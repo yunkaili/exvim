@@ -1,7 +1,7 @@
 " File              : .vimrc.plugins
 " Author            : Yunkai Li <yunkai.li@hotmail.com>
 " Date              : 17.09.2020
-" Last Modified Date: 21.10.2020
+" Last Modified Date: 16.11.2020
 " Last Modified By  : Yunkai Li <yunkai.li@hotmail.com>
 
 " man.vim: invoked by :Man {name}
@@ -307,7 +307,7 @@ let g:syntastic_python_checkers = ['pyflakes']
 Plug 'heavenshell/vim-pydocstring'
 
 nmap <silent> <C-_> <Plug>(pydocstring)
-let g:pydocstring_doq_path = '/usr/local/bin/doq'
+let g:pydocstring_doq_path = '/opt/conda/bin/doq'
 let g:pydocstring_formatter = 'google'
 
 " Track the engine.
@@ -337,8 +337,8 @@ Plug 'alpertuna/vim-header'
 
 let g:header_field_author = 'Yunkai Li'
 let g:header_field_author_email = 'yunkai.li@hotmail.com'
-let g:header_auto_add_header = 1
-" map <F2> :AddHeader<CR>
+let g:header_auto_add_header = 0
+map <F2> :AddHeader<CR>
 
 " YouCompleteMe
 " ---------------------------------------------------
@@ -437,9 +437,8 @@ let g:LargeFile= 5 " files >= 5MB will use LargeFile rules
 
 " collections of language pack
 " ---------------------------------------------------
-Plug 'sheerun/vim-polyglot'
-let g:polyglot_enabled = ['python', 'python-indent', 'yaml', 'c/c++', 'c++11', 'cmake', 'csv', 'git' ]
-
+" Plug 'sheerun/vim-polyglot'
+" let g:polyglot_enabled = ['python', 'python-indent', 'yaml', 'c/c++', 'c++11', 'cmake', 'csv', 'git' ]
 
 "}}}
 
@@ -457,4 +456,4 @@ let c_no_bracket_error = 1
 
 "}}}
 
-" vim:ts=4:sw=4:sts=4 et fdm=marker:
+" vim:ts=2:sw=2:sts=2 et fdm=marker:
