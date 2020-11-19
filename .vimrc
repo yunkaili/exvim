@@ -271,7 +271,9 @@ match ws /\s\+$/
 " ------------------------------------------------------------------
 " Desc: Text edit
 " ------------------------------------------------------------------
-
+"
+set ai " autoindent
+set si " smartindent
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 " indent options
 " see help cinoptions-values for more details
@@ -294,13 +296,11 @@ function! g:MyDiff()
     silent execute '!' .  'diff ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
 endfunction
 
-set ai " autoindent
-set si " smartindent
 set cindent shiftwidth=2 " set cindent on to autoinent when editing c/c++ file, with 2 shift width
+set expandtab " set expandtab on, the tab will be change to space automaticaly
 set shiftwidth=2
 set tabstop=2 " set tabstop to 2 characters
 set softtabstop=2
-set expandtab " set expandtab on, the tab will be change to space automaticaly
 set ve=block " in visual block mode, cursor can be positioned where there is no actual character
 
 autocmd FileType python setlocal shiftwidth=2 softtabstop=2 expandtab

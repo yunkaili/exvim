@@ -437,8 +437,8 @@ let g:LargeFile= 5 " files >= 5MB will use LargeFile rules
 
 " collections of language pack
 " ---------------------------------------------------
-" Plug 'sheerun/vim-polyglot'
-" let g:polyglot_enabled = ['python', 'python-indent', 'yaml', 'c/c++', 'c++11', 'cmake', 'csv', 'git' ]
+Plug 'sheerun/vim-polyglot'
+let g:polyglot_enabled = ['python', 'python-indent', 'yaml', 'c/c++', 'c++11', 'cmake', 'csv', 'git' ]
 
 "}}}
 
