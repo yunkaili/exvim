@@ -24,24 +24,7 @@ fi
 # download and install bundles through Vundle in this repository
 echo "Update vim-plugins."
 cd ${ORIGINAL_PATH}
-vim --cmd "set rtp=./vimfiles,\$VIMRUNTIME,./vimfiles/after" +PlugInstall +PlugClean +PlugUpdate +qall
-
-# TODO
-# install powerline-fonts on MacOSX
-# cd ./ext/powerline-fonts/DejaVuSansMono/
-# if [ ! -f "~/Library/Fonts/DejaVu\ Sans\ Mono\ Bold\ Oblique\ for\ Powerline.ttf" ]; then
-#     cp ./DejaVu\ Sans\ Mono\ Bold\ Oblique\ for\ Powerline.ttf ~/Library/Fonts/
-# fi
-# if [ ! -f "~/Library/Fonts/DejaVu\ Sans\ Mono\ Bold\ for\ Powerline.ttf" ]; then
-#     cp ./DejaVu\ Sans\ Mono\ Bold\ for\ Powerline.ttf ~/Library/Fonts/
-# fi
-# if [ ! -f "~/Library/Fonts/DejaVu\ Sans\ Mono\ Oblique\ for\ Powerline.ttf" ]; then
-#     cp ./DejaVu\ Sans\ Mono\ Oblique\ for\ Powerline.ttf ~/Library/Fonts/
-# fi
-# if [ ! -f "~/Library/Fonts/DejaVu\ Sans\ Mono\ for\ Powerline.ttf" ]; then
-#     cp ./DejaVu\ Sans\ Mono\ for\ Powerline.ttf ~/Library/Fonts/
-# fi
-echo "Please install powerline-fonts manually."
+vim --cmd "set rtp=./vimfiles,\$VIMRUNTIME,./vimfiles/after" -es +PlugInstall +PlugClean +PlugUpdate +qall
 
 # go back
 cd ${ORIGINAL_PATH}
