@@ -1,7 +1,7 @@
 " File              : .vimrc.plugins
 " Author            : Yunkai Li <yunkai.li@hotmail.com>
 " Date              : 17.09.2020
-" Last Modified Date: 16.11.2020
+" Last Modified Date: 01.02.2021
 " Last Modified By  : Yunkai Li <yunkai.li@hotmail.com>
 
 " man.vim: invoked by :Man {name}
@@ -99,12 +99,13 @@ nnoremap <unique> <leader>hv :EXHierarchyCWord<CR>
 
 " majutsushi/tagbar
 " ---------------------------------------------------
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
 
 nnoremap <unique> <silent> <F4> :TagbarToggle<CR>
 
 " if ctags bin exist"
-let g:tagbar_ctags_bin = '/usr/bin/ctags'
+let g:tagbar_ctags_bin = '/opt/conda/bin/ctags'
 
 let g:tagbar_sort = 1
 let g:tagbar_map_preview = '<CR>'
@@ -209,6 +210,8 @@ let g:lightline#bufferline#unnamed      = '[No Name]'
 let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
 let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
 let g:lightline.component_type   = {'buffers': 'tabsel'}
+
+autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
 
 " ctrlp: invoke by <ctrl-p>
 " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
@@ -342,7 +345,8 @@ map <F2> :AddHeader<CR>
 
 " YouCompleteMe
 " ---------------------------------------------------
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 
 let g:acp_enableAtStartup = 1
 

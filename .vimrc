@@ -1,7 +1,7 @@
 " File              : .vimrc
 " Author            : Yunkai Li <yunkai.li@hotmail.com>
 " Date              : 17.09.2020
-" Last Modified Date: 16.11.2020
+" Last Modified Date: 01.02.2021
 " Last Modified By  : Yunkai Li <yunkai.li@hotmail.com>
 "/////////////////////////////////////////////////////////////////////////////
 " basic
