@@ -252,7 +252,7 @@ set cursorcolumn                " Highlight current colum
 " highlight CursorColumn ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 " highlight Pmenu ctermfg=15 ctermbg=0 guifg=None guibg=None
 highlight Search ctermbg=Yellow ctermfg=Red
-set colorcolumn=80
+set colorcolumn=88
 highlight ColorColumn ctermbg=green guibg=orange
 
 set linespace=0                 " No extra spaces between rows
@@ -296,14 +296,14 @@ function! g:MyDiff()
     silent execute '!' .  'diff ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
 endfunction
 
-set cindent shiftwidth=2 " set cindent on to autoinent when editing c/c++ file, with 2 shift width
+set cindent shiftwidth=4 " set cindent on to autoinent when editing c/c++ file, with 2 shift width
 set expandtab " set expandtab on, the tab will be change to space automaticaly
-set shiftwidth=2
-set tabstop=2 " set tabstop to 2 characters
-set softtabstop=2
+set shiftwidth=4
+set tabstop=4 " set tabstop to 2 characters
+set softtabstop=4
 set ve=block " in visual block mode, cursor can be positioned where there is no actual character
 
-autocmd FileType python setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4 expandtab
 
 " set Number format to null(default is octal) , when press CTRL-A on number
 " like 007, it would not become 010
@@ -372,7 +372,7 @@ if has('autocmd')
         " Desc: file types
         " ------------------------------------------------------------------
 
-        au FileType text setlocal textwidth=80 " for all text files set 'textwidth' to 80 characters.
+        au FileType text setlocal textwidth=88 " for all text files set 'textwidth' to 88 characters.
         au FileType c,cpp,cs,swig set nomodeline " this will avoid bug in my project with namespace ex, the vim will tree ex:: as modeline.
 
         " disable auto-comment for c/cpp, lua, javascript, c# and vim-script
