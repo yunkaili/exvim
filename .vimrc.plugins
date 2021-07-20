@@ -306,7 +306,7 @@ let g:syntastic_python_checkers = ['pyflakes']
 Plug 'heavenshell/vim-pydocstring'
 
 nmap <silent> <C-_> <Plug>(pydocstring)
-let g:pydocstring_doq_path = '/opt/conda/bin/doq'
+let g:pydocstring_doq_path = '/usr/local/bin/doq'
 let g:pydocstring_formatter = 'google'
 
 " Track the engine.
