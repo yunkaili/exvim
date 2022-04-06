@@ -111,8 +111,9 @@ noremap <leader>bg :call ToggleBG()<CR>
 
 " add to fit when using with jupyterlab"
 set termguicolors
-" colorscheme dracula
-colorscheme nord
+" colorscheme molokai
+" colorscheme nord
+colorscheme onedark
 
 "/////////////////////////////////////////////////////////////////////////////
 " General
