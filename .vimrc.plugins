@@ -286,22 +286,19 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-" syntastic: invoke when you save file and have syntac-checker
+
+" ALE (Asynchronous Lint Engine) is a plugin providing linting (syntax checking and semantic errors) and code-fixing
 " ---------------------------------------------------
-Plug 'scrooloose/syntastic'
+Plug 'dense-analysis/ale'
+let b:ale_linters = ['pylint']
+let b:ale_fixers = ['autoflake', 'isort', 'black']
+" Disable warnings about trailing whitespace for Python files.
+let b:ale_warn_about_trailing_whitespace = 0
+" https://github.com/dense-analysis/ale/issues/1472
+let g:ale_python_pylint_change_director = 0
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_python_exec = 'python3'
-" let g:syntastic_python_pylint3_args = '--rcfile=/home/liyunkai/.pylintrc'
-" let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_checkers = ['pyflakes']
 
 " vim-pydocstring
 " ---------------------------------------------------
